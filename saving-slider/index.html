@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Saving Slider</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+</head>
+<body>
+    <div id="saving-slider">
+        <div id="slider"></div>
+        <div id="value"></div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var savingRange = [
+                {
+                    min: 0,
+                    max: 74,
+                    percentage: 0
+                },
+                {
+                    min: 75,
+                    max: 99,
+                    percentage: 4
+                },
+                {
+                    min: 100,
+                    max: 149,
+                    percentage: 16
+                },
+                {
+                    min: 150,
+                    max: 199,
+                    percentage: 27
+                },
+                {
+                    min: 200,
+                    max: 249,
+                    percentage: 33
+                },
+                {
+                    min: 250,
+                    max: 299,
+                    percentage: 37
+                },
+                {
+                    min: 300,
+                    max: 349,
+                    percentage: 40
+                },
+                {
+                    min: 350,
+                    max: 399,
+                    percentage: 43
+                },
+                {
+                    min: 400,
+                    max: 449,
+                    percentage: 45
+                },
+                {
+                    min: 450,
+                    max: 699,
+                    percentage: 48
+                },
+                {
+                    min: 700,
+                    max: 899,
+                    percentage: 51
+                },
+                {
+                    min: 900,
+                    max: 1199,
+                    percentage: 53
+                },
+                {
+                    min: 1200,
+                    max: 2499,
+                    percentage: 55
+                },
+                {
+                    min: 2500,
+                    max: 5000,
+                    percentage: 56
+                },
+            ];
+            var increasePercent = [6.7, 13.4, 20.1, 26.8, 33.5];
+
+            // start calculating when slider change value
+            $('#slider').slider({
+                max: 5000,
+                slide: function(event, ui){
+                    var result = getSpendingAndSaving(ui.value);
+                    $('#value').html('Spend in 1st year: ' + result.spendYear1 + '<br />Spend in 5 years: '
+                    + result.spendTotal);
+                }
+            });
+
+            // function get spending and saving in 1st year and total 5 years
+            function getSpendingAndSaving($inputValue){
+                // get saving range
+                var savingPercentage = 0;  // saving percentage
+                var spendingAndSaving = {
+                    spendYear1: 0,  // spending in 1st year
+                    spendTotal: 0,  // spending in 5 years
+                    saveYear1: 0,  // saving in 1st year
+                    saveTotal: 0  // saving in 5 years
+                }
+
+                // loop saving range to find percentage based on uer input
+                $.each(savingRange, function(){
+                    if(this.min <= $inputValue && $inputValue <= this.max) {
+                        savingPercentage = this.percentage;
+                    }
+                });
+
+                // get spend in 1st year
+                spendingAndSaving.spendYear1 = $inputValue*12*(100 + increasePercent[0])/100;
+                // round result
+                spendingAndSaving.spendYear1 = Math.round(spendingAndSaving.spendYear1);
+
+                // get total spend in 5 years
+                $.each(increasePercent, function(){
+                    spendingAndSaving.spendTotal += $inputValue*12*(100 + this)/100;
+                });
+                // round spend total
+                spendingAndSaving.spendTotal = Math.round(spendingAndSaving.spendTotal);
+
+                // get saving in 1st year
+                spendingAndSaving.saveYear1 = spendingAndSaving.spendYear1*savingPercentage/100;
+                spendingAndSaving.saveYear1 = Math.round(spendingAndSaving.saveYear1);
+                //get saving in 5 years
+                spendingAndSaving.saveTotal = spendingAndSaving.saveTotal*savingPercentage/100;
+                spendingAndSaving.saveTotal = Math.round(spendingAndSaving.saveTotal);
+
+                // return object
+                return spendingAndSaving;
+            }
+        });
+    </script>
+</body>
+</html>
