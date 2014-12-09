@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <title>Saving Slider</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <style>
+        #saving-slider > div{display: inline-block; width: 250px; padding: 10px; margin: 0 50px; border: solid 1px #ccc;}
+        #slider p{font-size: 28px; text-align: center;}
+        #slider .input-slider{margin: 5px 20px;}
+    </style>
 </head>
 <body>
     <div id="saving-slider">
-        <div id="slider"></div>
-        <div id="value"></div>
+        <div id="slider">
+            <p>How much your last electric bill?</p>
+            <div class="input-slider">
+
+            </div>
+        </div>
+        <div id="spend"></div>
+        <div id="save">
+
+        </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
@@ -92,16 +105,22 @@
             ];
             var increasePercent = [6.7, 13.4, 20.1, 26.8, 33.5];
 
+            // bind digits
+            $('#value').sevenSegArray({
+                digits: 5,
+                value: 0,
+                colorOff: '#CCCCCC',
+                colorBackground: '#FFFFFF'
+            });
+
             // start calculating when slider change value
-            $('#slider').slider({
+            $('.input-slider').slider({
                 max: 2500,
+                range: 10,
                 slide: function(event, ui){
                     var result = getSpendingAndSaving(ui.value);
                     $("#value").sevenSegArray({
-                        digits: 5,
-                        value: result.saveTotal,
-                        colorOff: '#CCCCCC',
-                        colorBackground: '#FFFFFF'
+                        value: result.saveTotal
                     });
                 }
             });
