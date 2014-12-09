@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <title>Saving Slider</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-    <style>
-        #saving-slider > div{display: inline-block; width: 250px; padding: 10px; margin: 0 50px; border: solid 1px #ccc;}
-        #slider p{font-size: 28px; text-align: center;}
-        #slider .input-slider{margin: 5px 20px;}
-    </style>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <div id="saving-slider">
@@ -17,10 +14,33 @@
             <div class="input-slider">
 
             </div>
+            <span class="user-input money">$<span class="price">0</span></span>
         </div>
-        <div id="spend"></div>
+        <div id="spend">
+            <div class="total">
+                <img class="kim kim1" src="img/GAUGES-03.png" alt="" />
+                <div class="text align-center">
+                    <p><strong>5 YEARS</strong> <i>Current Spending</i></p>
+                    <span class="total-spend money">$<span class="price">0</span></span>
+                </div>
+            </div>
+            <div class="first-year">
+                <div class="gauge">
+                    <img class="kim kim2" src="img/GAUGES-04.png" alt="" />
+                </div>
+                <div class="text align-center">
+                    <p><strong>1 YEAR</strong> <i>Current Spending</i></p>
+                    <span class="first-year-spend money">$<span class="price">0</span></span>
+                </div>
+            </div>
+        </div>
         <div id="save">
-
+            <div class="total-save digits">
+            </div>
+            <p class="total-save"><strong>5 YEARS</strong> <i>Zing Solar Saving</i></p>
+            <div class="first-year-save digits">
+            </div>
+            <p class="first-year-save"><strong>1 YEAR</strong> <i>Zing Solar Saving</i></p>
         </div>
     </div>
 
@@ -106,24 +126,66 @@
             var increasePercent = [6.7, 13.4, 20.1, 26.8, 33.5];
 
             // bind digits
-            $('#value').sevenSegArray({
+            $('.digits').sevenSegArray({
                 digits: 5,
                 value: 0,
-                colorOff: '#CCCCCC',
+                colorOn: '#e91e24',
+                colorOff: '#efeeec',
                 colorBackground: '#FFFFFF'
             });
 
             // start calculating when slider change value
             $('.input-slider').slider({
-                max: 2500,
+                max: 2400,
                 range: 10,
                 slide: function(event, ui){
                     var result = getSpendingAndSaving(ui.value);
-                    $("#value").sevenSegArray({
+
+                    // saving by digits
+                    $(".digits.total-save").sevenSegArray({
                         value: result.saveTotal
                     });
+                    $(".digits.first-year-save").sevenSegArray({
+                        value: result.saveYear1
+                    });
+
+                    // spending
+                    $('span.total-spend span.price').html(result.spendTotal);
+                    $('span.first-year-spend span.price').html(result.spendYear1);
+
+                    // user input
+                    $('span.user-input span.price').html(ui.value);
+
+                    /**
+                    Based on requirement we just need our gauges always on 60-70%
+                    If user input = 0, reset gauges to -90deg
+                    */
+                    if (ui.value != 0) {
+                        var randomGauge1 = getRandomArbitrary(18, 27);
+                        var randomGauge2 = getRandomArbitrary(18, 27);
+                    } else {
+                        var randomGauge1 = -90;
+                        var randomGauge2 = -90;
+                    }
+                    // normal
+                    $('img.kim1').css('transform', 'rotate(' + randomGauge1 + 'deg)');
+                    $('img.kim2').css('transform', 'rotate(' + randomGauge2 + 'deg)');
+                    // webkit
+                    $('img.kim1').css('-webkit-transform', 'rotate(' + randomGauge1 + 'deg)');
+                    $('img.kim2').css('-webkit-transform', 'rotate(' + randomGauge2 + 'deg)');
+                    // moz
+                    $('img.kim1').css('-moz-transform', 'rotate(' + randomGauge1 + 'deg)');
+                    $('img.kim2').css('-moz-transform', 'rotate(' + randomGauge2 + 'deg)');
+                    // ms
+                    $('img.kim1').css('-ms-transform', 'rotate(' + randomGauge1 + 'deg)');
+                    $('img.kim2').css('-ms-transform', 'rotate(' + randomGauge2 + 'deg)');
                 }
             });
+
+            // function get random in range min max
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
 
             // function get spending and saving in 1st year and total 5 years
             function getSpendingAndSaving($inputValue){

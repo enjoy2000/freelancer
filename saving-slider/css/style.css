@@ -1,0 +1,92 @@
+#saving-slider > div {
+	border: solid 1px #ccc;
+	display: inline-block;
+	margin: 0 30px;
+	padding: 10px;
+	vertical-align: top;
+	width: 250px;
+}
+#slider p {
+	font-size: 28px;
+	text-align: center;
+}
+#slider .input-slider {
+	margin: 5px 20px;
+}
+#saving-slider #spend {
+	padding: 20px;
+	width: 400px;
+}
+#spend > .total {
+	background: url('../img/GAUGES-01.png') top center no-repeat transparent;
+	min-height: 370px;
+	position: relative;
+}
+img.kim {
+	moz-transform-origin: bottom;
+	transform-origin: bottom;
+	transition: transform 0.2s ease-out;
+	webkit-transform-origin: bottom;
+	webkit-transition: transform 0.2s ease-out;
+	transform: rotate(-90deg);
+	webkit-transform: rotate(-90deg);
+}
+#spend > .total > img.kim {
+	bottom: 177px;
+	left: 195px;
+	position: absolute;
+}
+#spend > .total > .text {
+	bottom: 70px;
+	position: absolute;
+	width: 100%;
+}
+.align-center {
+	text-align: center;
+}
+.text > p {
+	font-size: 16px;
+	letter-spacing: 0px;
+	margin-bottom: 2px;
+}
+.money {
+	color: #e5221e;
+	font-size: 30px;
+	font-weight: bold;
+}
+#spend > .first-year > div {
+	display: inline-block;
+	vertical-align: top;
+}
+#spend > .first-year .gauge {
+	background: url('../img/GAUGES-02.png') top center no-repeat transparent;
+	min-height: 200px;
+	width: 200px;
+	position: relative;
+}
+#spend > .first-year .gauge > img.kim {
+	position: absolute;
+	top: 20px;
+	left: 94px;
+}
+#spend > .first-year .text {
+	margin-top: 40px;
+}
+.digits {
+	border: solid 1px #ccc;
+	border-radius: 2px;
+	height: 70px;
+	width: 230px;
+	padding: 5px;
+	background-color: #fff;
+}
+.digits .sevenSeg-svg {
+	background-color: #fff;
+}
+.digits .sevenSeg-segGroup > use,
+.digits circle {
+	fill: #efeeec;
+}
+.digits .sevenSeg-segGroup > use.sevenSeg-segOn {
+	fill: #e91e24;
+}
