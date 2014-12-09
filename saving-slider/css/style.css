@@ -90,3 +90,6 @@ img.kim {
 .digits .sevenSeg-segGroup > use.sevenSeg-segOn {
 	fill: #e91e24;
 }
+.ui-slider-range {
+	background: #e5221e;
+}

@@ -141,6 +141,9 @@
                 slide: function(event, ui){
                     var result = getSpendingAndSaving(ui.value);
 
+                    // ui-slider-range
+                    $('.ui-slider-range').css('width', ui.value*100/2400 + '%');
+                    
                     // saving by digits
                     $(".digits.total-save").sevenSegArray({
                         value: result.saveTotal
