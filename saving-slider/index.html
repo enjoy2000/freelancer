@@ -13,6 +13,9 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="js/sevenSeg.js"></script>
+
     <script>
         $(document).ready(function(){
             var savingRange = [
@@ -91,11 +94,15 @@
 
             // start calculating when slider change value
             $('#slider').slider({
-                max: 5000,
+                max: 2500,
                 slide: function(event, ui){
                     var result = getSpendingAndSaving(ui.value);
-                    $('#value').html('Spend in 1st year: ' + result.spendYear1 + '<br />Spend in 5 years: '
-                    + result.spendTotal);
+                    $("#value").sevenSegArray({
+                        digits: 5,
+                        value: result.saveTotal,
+                        colorOff: '#CCCCCC',
+                        colorBackground: '#FFFFFF'
+                    });
                 }
             });
 
@@ -133,7 +140,7 @@
                 spendingAndSaving.saveYear1 = spendingAndSaving.spendYear1*savingPercentage/100;
                 spendingAndSaving.saveYear1 = Math.round(spendingAndSaving.saveYear1);
                 //get saving in 5 years
-                spendingAndSaving.saveTotal = spendingAndSaving.saveTotal*savingPercentage/100;
+                spendingAndSaving.saveTotal = spendingAndSaving.spendTotal*savingPercentage/100;
                 spendingAndSaving.saveTotal = Math.round(spendingAndSaving.saveTotal);
 
                 // return object
