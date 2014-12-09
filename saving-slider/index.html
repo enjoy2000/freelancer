@@ -143,7 +143,7 @@
 
                     // ui-slider-range
                     $('.ui-slider-range').css('width', ui.value*100/2400 + '%');
-                    
+
                     // saving by digits
                     $(".digits.total-save").sevenSegArray({
                         value: result.saveTotal
@@ -153,8 +153,8 @@
                     });
 
                     // spending
-                    $('span.total-spend span.price').html(result.spendTotal);
-                    $('span.first-year-spend span.price').html(result.spendYear1);
+                    $('span.total-spend span.price').html(result.spendTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                    $('span.first-year-spend span.price').html(result.spendYear1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
                     // user input
                     $('span.user-input span.price').html(ui.value);
@@ -164,8 +164,8 @@
                     If user input = 0, reset gauges to -90deg
                     */
                     if (ui.value != 0) {
-                        var randomGauge1 = getRandomArbitrary(18, 27);
-                        var randomGauge2 = getRandomArbitrary(18, 27);
+                        var randomGauge1 = getRandomArbitrary(18, 36);
+                        var randomGauge2 = getRandomArbitrary(18, 36);
                     } else {
                         var randomGauge1 = -90;
                         var randomGauge2 = -90;
