@@ -138,6 +138,9 @@
             $('.input-slider').slider({
                 max: 2400,
                 range: 10,
+                start: function(event, ui) {
+                    resetNeedle();
+                },
                 stop: function(event, ui) {
 
                     /**
