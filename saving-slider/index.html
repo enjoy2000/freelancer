@@ -138,7 +138,32 @@
             $('.input-slider').slider({
                 max: 2400,
                 range: 10,
-                slide: function(event, ui){
+                stop: function(event, ui) {
+
+                    /**
+                    Based on requirement we just need our gauges always on 60-70%
+                    If user input = 0, reset gauges to -90deg
+                    */
+                    if (ui.value != 0) {
+                        var randomGauge1 = getRandomArbitrary(18, 36);
+                        var randomGauge2 = getRandomArbitrary(18, 36);
+
+                        // make the needle rotate with stops/jump-point 25% 50%, etc...
+
+                        // reset the needle
+                        $.when(resetNeedle()).then(function(){
+
+                            // start to rotate
+                            $('img.kim1').rotate(randomGauge1);
+                            $('img.kim2').rotate(randomGauge2);
+
+                        });
+                    } else {
+                        console.log('slider value become 0');
+                        resetNeedle();
+                    }
+                },
+                slide: function(event, ui) {
                     var result = getSpendingAndSaving(ui.value);
 
                     // ui-slider-range
@@ -158,32 +183,26 @@
 
                     // user input
                     $('span.user-input span.price').html(ui.value);
-
-                    /**
-                    Based on requirement we just need our gauges always on 60-70%
-                    If user input = 0, reset gauges to -90deg
-                    */
-                    if (ui.value != 0) {
-                        var randomGauge1 = getRandomArbitrary(18, 36);
-                        var randomGauge2 = getRandomArbitrary(18, 36);
-                    } else {
-                        var randomGauge1 = -90;
-                        var randomGauge2 = -90;
-                    }
-                    // normal
-                    $('img.kim1').css('transform', 'rotate(' + randomGauge1 + 'deg)');
-                    $('img.kim2').css('transform', 'rotate(' + randomGauge2 + 'deg)');
-                    // webkit
-                    $('img.kim1').css('-webkit-transform', 'rotate(' + randomGauge1 + 'deg)');
-                    $('img.kim2').css('-webkit-transform', 'rotate(' + randomGauge2 + 'deg)');
-                    // moz
-                    $('img.kim1').css('-moz-transform', 'rotate(' + randomGauge1 + 'deg)');
-                    $('img.kim2').css('-moz-transform', 'rotate(' + randomGauge2 + 'deg)');
-                    // ms
-                    $('img.kim1').css('-ms-transform', 'rotate(' + randomGauge1 + 'deg)');
-                    $('img.kim2').css('-ms-transform', 'rotate(' + randomGauge2 + 'deg)');
                 }
             });
+
+            // function reset needle
+            function resetNeedle() {
+                $('img.kim1').rotate(-90);
+                $('img.kim2').rotate(-90);
+            }
+            
+            // create jquery function css transform rotate
+            $.fn.rotate = function(deg) {
+                // normal
+                this.css('transform', 'rotate(' + deg + 'deg)');
+                // webkit
+                this.css('-webkit-transform', 'rotate(' + deg + 'deg)');
+                // moz
+                this.css('-moz-transform', 'rotate(' + deg + 'deg)');
+                // ms
+                this.css('-ms-transform', 'rotate(' + deg + 'deg)');
+            }
 
             // function get random in range min max
             function getRandomArbitrary(min, max) {
