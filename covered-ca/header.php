@@ -26,7 +26,7 @@
             <img class="logo img-responsive" alt="Logo" src="img/logo.png" />
         </div>
         <div class="pull-right">
-            <h2><strong>Apply Now</strong> (XXX) XXX-XXXX</h2>
+            <h3><strong>Apply Now</strong> (XXX) XXX-XXXX</h3>
             <small>to speak with a Covered California Certified Insurance Agent</small>
         </div>
     </div>
