@@ -163,7 +163,10 @@ div.jumbotron:before {
     margin-bottom: 0;
     font-size: 42px;
 }
-header .pull-right h2{
+header .pull-right{
+    text-align: right;
+}
+header .pull-right h3{
     margin-bottom: 0;
 }
 #content > .container {
