@@ -6,9 +6,9 @@
         "cd /usr/share/nginx/freelancer",
 	'eval "$(ssh-agent -s)"',
 	'ssh-add ~/.ssh/enjoy',
+        "chown -R apache:apache ."
         "git fetch --all",
         "git reset --hard origin/master",
-        "chown -R apache:apache ."
     );
     
     // run command
