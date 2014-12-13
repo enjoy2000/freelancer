@@ -3,9 +3,11 @@
     $form.validate({
         highlight: function(element) {
             $(element).parent().addClass("text-danger");
+            $(element).parent().addClass("has-error");
         },
         unhighlight: function(element) {
             $(element).parent().removeClass("text-danger");
+            $(element).parent().removeClass("has-error");
         }
     });
     $form.submit(function(e){
