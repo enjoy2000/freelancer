@@ -23,7 +23,7 @@
 <header id="header">
     <div class="container clearfix">
         <div class="logo-container pull-left">
-            <img class="logo img-responsive" alt="Logo" src="img/logo.png" />
+           <a href="/covered-ca" title="Get Covered Now California"><img class="logo img-responsive" alt="Logo" src="img/logo.png" /></a>
         </div>
         <div class="pull-right">
             <h3><strong>Apply Now</strong> (XXX) XXX-XXXX</h3>
