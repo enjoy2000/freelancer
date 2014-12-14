@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
