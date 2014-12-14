@@ -127,7 +127,7 @@
 
 body {
     background-color: #e9e9e9;
-    font-family: "Myriad Pro","PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "MyriadPro Light","MyriadPro","PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.42857143;
@@ -209,6 +209,7 @@ div.sidebar .more-info ul li{
 .additional-home h3{
     padding-bottom: 5px;
     border-bottom: solid 1px #000;
+    font-weight: 700;
 }
 footer {
     background-color: #564f57;
