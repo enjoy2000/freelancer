@@ -5,20 +5,73 @@
     <title>Saving Slider</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.15.0/css/uikit.min.css" />
-    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 	<!-- Saving Slider -->
 	<div id="saving-slider" class="uk-width-1-1">
-	    <div class="uk-container uk-container-center">
-	        <div id="slider">
-	            <p>How much your last electric bill?</p>
-	            <div class="input-slider">
+	    <div class="uk-align-center uk-container-center">
+
+            <!-- Gauges -->
+            <div id="gauges" class="uk-align-center">
+                <div class="uk-display-inline-block gauge-left spend-year1">
+                    <div class="uk-width-1-1">
+                        <img class="gauge" src="img/gauge-left.png" alt="Gauge" />
+                        <img class="kim" src="img/needle.png" alt="Neddle" />
+                    </div>
+                    <div class="calculate uk-text-center">
+                        <p class="money gauge-money">$ <span class="price">0</span></p>
+                        <p class="text">
+                            Current one year spending
+                        </p>
+                    </div>
+                </div>
+                <div class="uk-display-inline-block gauge-left spend-total">
+                    <div class="uk-width-1-1">
+                        <img class="gauge" src="img/gauge-left.png" alt="Gauge" />
+                        <img class="kim" src="img/needle.png" alt="Neddle" />
+                    </div>
+                    <div class="calculate uk-text-center">
+                        <p class="money gauge-money">$ <span class="price">0</span></p>
+                        <p class="text">
+                            Current five years spending
+                        </p>
+                    </div>
+                </div>
+                <div class="uk-display-inline-block gauge-right save-year1">
+                    <div class="uk-width-1-1">
+                        <img class="gauge" src="img/gauge-right.png" alt="Gauge" />
+                        <img class="kim" src="img/needle.png" alt="Neddle" />
+                    </div>
+                    <div class="calculate uk-text-center">
+                        <p class="money gauge-money">$ <span class="price">0</span></p>
+                        <p class="text">
+                            Current one year saving
+                        </p>
+                    </div>
+                </div>
+                <div class="uk-display-inline-block gauge-right save-total">
+                    <div class="uk-width-1-1">
+                        <img class="gauge" src="img/gauge-right.png" alt="Gauge" />
+                        <img class="kim" src="img/needle.png" alt="Neddle" />
+                    </div>
+                    <div class="calculate uk-text-center">
+                        <p class="money gauge-money">$ <span class="price">0</span></p>
+                        <p class="text">
+                            Current five years saving
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider -->
+	        <div id="slider" class="uk-text-center">
+	            <p class="uk-display-inline-block">How much your last electric bill?</p>
+	            <div class="input-slider uk-display-inline-block">
 
 	            </div>
-	            <span class="user-input money">$<span class="price">0</span></span>
+	            <span class="user-input money uk-display-inline-block">$ <span class="price">0</span></span>
 	        </div>
         </div>
     </div>
@@ -26,8 +79,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.15.0/js/uikit.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
-    <script src="js/sevenSeg.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -104,19 +155,28 @@
                 },
             ];
             var increasePercent = [6.7, 13.4, 20.1, 26.8, 33.5];
+            // define max slider range
+            maxRange = 2400;
 
-            // bind digits
-            $('.digits').sevenSegArray({
-                digits: 5,
-                value: 0,
-                colorOn: '#e91e24',
-                colorOff: '#efeeec',
-                colorBackground: '#FFFFFF'
+            // center needle in gauge
+            var needles = $('img.kim');
+            needles.each(function(){
+                var width = $(this).width();
+                var gaugeWidth = $(this).parent().width();
+                $(this).css('left', (gaugeWidth - width)/2);
             });
+
+            var result = {
+                spendYear1: 0,  // spending in 1st year
+                spendTotal: 0,  // spending in 5 years
+                saveYear1: 0,  // saving in 1st year
+                saveTotal: 0  // saving in 5 years
+            }
+
 
             // start calculating when slider change value
             $('.input-slider').slider({
-                max: 2400,
+                max: maxRange,
                 range: 10,
                 start: function(event, ui) {
                     resetNeedle();
@@ -124,21 +184,32 @@
                 stop: function(event, ui) {
 
                     /**
-                    Based on requirement we just need our gauges always on 60-70%
+                    Based on requirement we just need our gauges always on 60-80%
                     If user input = 0, reset gauges to -90deg
                     */
                     if (ui.value != 0) {
-                        var randomGauge1 = getRandomArbitrary(18, 36);
-                        var randomGauge2 = getRandomArbitrary(18, 36);
+                        var maxResult = getSpendingAndSaving(maxRange);
+                        var degSpendYear1 = Math.floor( 180 * result.spendYear1/maxResult.spendYear1 - 90 );
+                        var degSpendTotal = Math.floor( 180 * result.spendTotal/maxResult.spendTotal - 90 );
+                        var degSaveYear1 = Math.floor( 180 * result.saveYear1/maxResult.saveYear1 - 90 );
+                        var degSaveTotal = Math.floor( 180 * result.saveTotal/maxResult.saveTotal - 90 );
 
-                        // make the needle rotate with stops/jump-point 25% 50%, etc...
+                        // always on 60 - 80%
+                        degSpendYear1 = degSpendTotal = degSaveYear1 = degSaveTotal = getRandomArbitrary(36, 70);
+
+                        degSpendYear1 = getRandomArbitrary(degSpendYear1-10, degSpendYear1+10);
+                        degSpendTotal = getRandomArbitrary(degSpendTotal-10, degSpendTotal+10);
+                        egSaveYear1 = getRandomArbitrary(degSaveYear1-10, degSaveYear1+10);
+                        degSaveTotal = getRandomArbitrary(degSaveTotal-10, degSaveTotal+10);
 
                         // reset the needle
                         $.when(resetNeedle()).then(function(){
 
                             // start to rotate
-                            $('img.kim1').rotate(randomGauge1);
-                            $('img.kim2').rotate(randomGauge2);
+                            $('.spend-year1 img.kim').rotate(degSpendYear1);
+                            $('.spend-total img.kim').rotate(degSpendTotal);
+                            $('.save-year1 img.kim').rotate(egSaveYear1);
+                            $('.save-total img.kim').rotate(degSaveTotal);
 
                         });
                     } else {
@@ -147,22 +218,16 @@
                     }
                 },
                 slide: function(event, ui) {
-                    var result = getSpendingAndSaving(ui.value);
+                    result = getSpendingAndSaving(ui.value);
 
                     // ui-slider-range
                     $('.ui-slider-range').css('width', ui.value*100/2400 + '%');
 
-                    // saving by digits
-                    $(".digits.total-save").sevenSegArray({
-                        value: result.saveTotal
-                    });
-                    $(".digits.first-year-save").sevenSegArray({
-                        value: result.saveYear1
-                    });
-
-                    // spending
-                    $('span.total-spend span.price').html(result.spendTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-                    $('span.first-year-spend span.price').html(result.spendYear1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                    // show money
+                    $('.spend-year1 .price').html(result.spendYear1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                    $('.spend-total .price').html(result.spendTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                    $('.save-year1 .price').html(result.saveYear1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                    $('.save-total .price').html(result.saveTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
                     // user input
                     $('span.user-input span.price').html(ui.value);
@@ -171,8 +236,10 @@
 
             // function reset needle
             function resetNeedle() {
-                $('img.kim1').rotate(-90);
-                $('img.kim2').rotate(-90);
+                $('.spend-year1 img.kim').rotate(-90);
+                $('.spend-total img.kim').rotate(-90);
+                $('.save-year1 img.kim').rotate(-90);
+                $('.save-total img.kim').rotate(-90);
             }
             
             // create jquery function css transform rotate

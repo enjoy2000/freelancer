@@ -1,28 +1,24 @@
-#saving-slider > div {
-	border: solid 1px #ccc;
-	display: inline-block;
-	margin: 0 30px;
-	padding: 10px;
-	vertical-align: top;
-	width: 250px;
+div#gauges {
+	text-align: center;
+	margin: 50px 0;
+}
+div#gauges > div > div:first-child {
+	position: relative;
+	min-height: 154px;
 }
 #slider p {
 	font-size: 28px;
 	text-align: center;
 }
 #slider .input-slider {
-	margin: 5px 20px;
-}
-#saving-slider #spend {
-	padding: 20px;
-	width: 400px;
-}
-#spend > .total {
-	background: url('../img/GAUGES-01.png') top center no-repeat transparent;
-	min-height: 370px;
-	position: relative;
+	margin: 0px 20px;
+	height: 23px;
+	border-radius: 15px;
 }
 img.kim {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
 	moz-transform-origin: bottom;
 	transform-origin: bottom;
 	transition: transform 0.5s ease-out;
@@ -31,65 +27,54 @@ img.kim {
 	transform: rotate(-90deg);
 	webkit-transform: rotate(-90deg);
 }
-#spend > .total > img.kim {
-	bottom: 177px;
-	left: 195px;
-	position: absolute;
+div#gauges .calculate {
+	margin-top: 30px;
 }
-#spend > .total > .text {
-	bottom: 70px;
-	position: absolute;
-	width: 100%;
-}
-.align-center {
-	text-align: center;
-}
-.text > p {
-	font-size: 16px;
-	letter-spacing: 0px;
-	margin-bottom: 2px;
+div#gauges .calculate .text {
+	font-size: 18px;
 }
 .money {
-	color: #e5221e;
+	color: #777777;
 	font-size: 30px;
 	font-weight: bold;
 }
-#spend > .first-year > div {
-	display: inline-block;
-	vertical-align: top;
+#slider .ui-slider-range {
+	background: #ffc015; /* Old browsers */
+	background: -moz-linear-gradient(left,  #ffc015 0%, #e5221e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffc015), color-stop(100%,#e5221e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #ffc015 0%,#e5221e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #ffc015 0%,#e5221e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #ffc015 0%,#e5221e 100%); /* IE10+ */
+	background: linear-gradient(to right,  #ffc015 0%,#e5221e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc015', endColorstr='#e5221e',GradientType=1 ); /* IE6-9 */
+
+	border-top-left-radius: 15px!important;
+	border-bottom-left-radius: 15px!important;
 }
-#spend > .first-year .gauge {
-	background: url('../img/GAUGES-02.png') top center no-repeat transparent;
-	min-height: 200px;
-	width: 200px;
-	position: relative;
+div.input-slider {
+	min-width: 400px;
 }
-#spend > .first-year .gauge > img.kim {
-	position: absolute;
-	top: 20px;
-	left: 94px;
+#slider .user-input {
+	min-width: 90px;
+	margin-left: 20px;
 }
-#spend > .first-year .text {
-	margin-top: 40px;
+#slider span.ui-slider-handle.ui-state-default.ui-corner-all {
+	width: 55px;
+	height: 55px;
+	background: url('../img/pointer.png') center no-repeat transparent;
+	outline: none!important;
+	border: none!important;
+	top: -14px;
 }
-.digits {
-	border: solid 1px #ccc;
-	border-radius: 2px;
-	height: 70px;
-	width: 230px;
-	padding: 5px;
-	background-color: #fff;
+div.spend-year1 .money {
+	color: #fa8000;
 }
-.digits .sevenSeg-svg {
-	background-color: #fff;
+div.spend-total .money {
+	color: #f70000;
 }
-.digits .sevenSeg-segGroup > use,
-.digits circle {
-	fill: #efeeec;
+div.save-year1 .money {
+	color: #80d700;
 }
-.digits .sevenSeg-segGroup > use.sevenSeg-segOn {
-	fill: #e91e24;
-}
-.ui-slider-range {
-	background: #e5221e;
+div.save-total .money {
+	color: #00af00;
 }
