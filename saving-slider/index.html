@@ -159,11 +159,13 @@
             maxRange = 2400;
 
             // center needle in gauge
-            var needles = $('img.kim');
-            needles.each(function(){
-                var width = $(this).width();
-                var gaugeWidth = $(this).parent().width();
-                $(this).css('left', (gaugeWidth - width)/2);
+            $(document).ready(function(){
+                var needles = $('img.kim');
+                needles.each(function(){
+                    var width = $(this).width();
+                    var gaugeWidth = $(this).parent().width();
+                    $(this).css('left', (gaugeWidth - width)/2);
+                });
             });
 
             var result = {
