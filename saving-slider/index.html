@@ -79,6 +79,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.15.0/js/uikit.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="js/jquery.color-2.1.2.min.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -156,17 +157,7 @@
             ];
             var increasePercent = [6.7, 13.4, 20.1, 26.8, 33.5];
             // define max slider range
-            maxRange = 2400;
-
-            // center needle in gauge
-            $(document).ready(function(){
-                var needles = $('img.kim');
-                needles.each(function(){
-                    var width = $(this).width();
-                    var gaugeWidth = $(this).parent().width();
-                    $(this).css('left', (gaugeWidth - width)/2);
-                });
-            });
+            maxRange = 1500;
 
             var result = {
                 spendYear1: 0,  // spending in 1st year
@@ -201,19 +192,32 @@
 
                         degSpendYear1 = getRandomArbitrary(degSpendYear1-10, degSpendYear1+10);
                         degSpendTotal = getRandomArbitrary(degSpendTotal-10, degSpendTotal+10);
-                        egSaveYear1 = getRandomArbitrary(degSaveYear1-10, degSaveYear1+10);
+                        degSaveYear1 = getRandomArbitrary(degSaveYear1-10, degSaveYear1+10);
                         degSaveTotal = getRandomArbitrary(degSaveTotal-10, degSaveTotal+10);
 
-                        // reset the needle
-                        $.when(resetNeedle()).then(function(){
-
-                            // start to rotate
-                            $('.spend-year1 img.kim').rotate(degSpendYear1);
+                        // start to rotate
+                        $('.spend-year1 img.kim').rotate(degSpendYear1);
+                        $('.spend-year1 .money').animate({
+                            color: $.Color(getColorByDeg(degSpendYear1, 'left'))
+                        }, 500);
+                        setTimeout(function(){  // gauge 2
                             $('.spend-total img.kim').rotate(degSpendTotal);
-                            $('.save-year1 img.kim').rotate(egSaveYear1);
+                            $('.spend-total .money').animate({
+                                color: $.Color(getColorByDeg(degSpendTotal, 'left'))
+                            }, 500);
+                        }, 500);
+                        setTimeout(function(){  // gauge 3
+                            $('.save-year1 img.kim').rotate(degSaveYear1);
+                            $('.save-year1 .money').animate({
+                                color: $.Color(getColorByDeg(degSaveYear1, 'right'))
+                            }, 500);
+                        }, 900);
+                        setTimeout(function(){  // gauge 4
                             $('.save-total img.kim').rotate(degSaveTotal);
-
-                        });
+                            $('.save-total .money').animate({
+                                color: $.Color(getColorByDeg(degSaveTotal, 'right'))
+                            }, 500);
+                        }, 1200);
                     } else {
                         console.log('slider value become 0');
                         resetNeedle();
@@ -223,7 +227,7 @@
                     result = getSpendingAndSaving(ui.value);
 
                     // ui-slider-range
-                    $('.ui-slider-range').css('width', ui.value*100/2400 + '%');
+                    $('.ui-slider-range').css('width', ui.value*100/maxRange + '%');
 
                     // show money
                     $('.spend-year1 .price').html(result.spendYear1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
@@ -262,7 +266,7 @@
             }
 
             // function get spending and saving in 1st year and total 5 years
-            function getSpendingAndSaving($inputValue){
+            function getSpendingAndSaving($inputValue) {
                 // get saving range
                 var savingPercentage = 0;  // saving percentage
                 var spendingAndSaving = {
@@ -300,6 +304,37 @@
 
                 // return object
                 return spendingAndSaving;
+            }
+
+            // get color by deg
+            function getColorByDeg($deg, $position) {
+                var colorHex = null;
+                if ($position == 'right') {
+                    if ($deg >= -90 && $deg <= -53) {
+                        colorHex = '#f70000';
+                    } else if ($deg >= -54 && $deg <= -17) {
+                        colorHex = '#fa8000';
+                    } else if ($deg >= -18 && $deg <= 17) {
+                        colorHex = '#FDEC00';
+                    } else if ($deg >= 18 && $deg <= 53) {
+                        colorHex = '#00af00';
+                    } else {
+                        colorHex = '#80d700';
+                    }
+                } else {
+                    if ($deg >= -90 && $deg <= -53) {
+                        colorHex = '#80d700';
+                    } else if ($deg >= -54 && $deg <= -17) {
+                        colorHex = '#00af00';
+                    } else if ($deg >= -18 && $deg <= 17) {
+                        colorHex = '#FDEC00';
+                    } else if ($deg >= 18 && $deg <= 53) {
+                        colorHex = '#fa8000';
+                    } else {
+                        colorHex = '#f70000';
+                    }
+                }
+                return colorHex;
             }
         });
     </script>

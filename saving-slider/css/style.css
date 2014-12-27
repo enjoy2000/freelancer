@@ -18,7 +18,7 @@ div#gauges > div > div:first-child {
 img.kim {
 	position: absolute;
 	bottom: 0;
-	left: 50%;
+	left: 139px;
 	moz-transform-origin: bottom;
 	transform-origin: bottom;
 	transition: transform 0.5s ease-out;
