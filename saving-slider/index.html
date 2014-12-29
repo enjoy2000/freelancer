@@ -205,19 +205,19 @@
                             $('.spend-total .money').animate({
                                 color: $.Color(getColorByDeg(degSpendTotal, 'left'))
                             }, 500);
-                        }, 500);
+                        }, 200);
                         setTimeout(function(){  // gauge 3
                             $('.save-year1 img.kim').rotate(degSaveYear1);
                             $('.save-year1 .money').animate({
                                 color: $.Color(getColorByDeg(degSaveYear1, 'right'))
                             }, 500);
-                        }, 900);
+                        }, 500);
                         setTimeout(function(){  // gauge 4
                             $('.save-total img.kim').rotate(degSaveTotal);
                             $('.save-total .money').animate({
                                 color: $.Color(getColorByDeg(degSaveTotal, 'right'))
                             }, 500);
-                        }, 1200);
+                        }, 800);
                     } else {
                         console.log('slider value become 0');
                         resetNeedle();
