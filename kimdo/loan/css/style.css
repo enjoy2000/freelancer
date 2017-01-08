@@ -1,0 +1,662 @@
+@font-face {
+  font-family: 'HelveticaNeueLT-BoldCond';
+  src: url('../fonts/HelveticaNeueLT-BoldCond.woff') format('woff'),
+       url('../fonts/HelveticaNeueLT-BoldCond.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLT-BoldCond.svg#HelveticaNeueLT-BoldCond') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helvetica-bold-condensed';
+  src: url('../fonts/helvetica-bold-condensed.eot');
+  src: url('../fonts/helvetica-bold-condensed.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helvetica-bold-condensed.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*//////////////////////////////////////////////////
+GENERAL
+//////////////////////////////////////////////////*/
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.marginright0{margin-right: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.ar-body-wrapper
+{
+    margin: 0 auto;
+    width: 1240px;
+    padding-bottom: 20px;
+}
+.ar-heading-row h1
+{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0 15px 0;
+    color: black;
+}
+.ar-filter-text
+{
+    position: relative;
+}
+.ar-filter-result,.ar-sort-box{display: inline-block;}
+.ar-sort-box
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.ar-filter-result
+{
+    max-width: 900px;
+}
+
+.ar-filter-result p
+{
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.ar-filter-result span.ar-filter-tab
+{
+    font-size: 13px;
+    padding: 5px 12px;
+    font-weight: bold;
+    background-color: #eee;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.ar-filter-result span.ar-filter-tab i.fa
+{
+    font-size: 14px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.ar-filter-result span.ar-filter-clear
+{
+    color: #f67f26;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.ar-filter-result span.ar-filter-clear:hover
+{
+    color: #d47b35;
+}
+div.ar-sort-box div.input-group select.form-control
+{
+    background-color: #eee;
+    border-radius: 6px;
+    border: none;
+    height: 30px;
+}
+.ar-heading-row
+{
+    margin-bottom: 15px;
+}
+.ar-heading-row p
+{
+    margin-bottom: 7px;
+    line-height: 1.3;
+}
+
+.ar-heading-row h3
+{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: black;
+}
+.ar-ads-box
+{
+    width: 336px;
+    height: 280px;
+    display: inline-block;
+    float: right;
+    background-color: #ddd;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+.ar-sidebar-filters .ar-panel-body
+{
+    display: none;
+}
+
+
+.ar-sidebar-filters .ar-panel-body.ar-panel-open
+{
+    display: block;
+}
+
+div.ar-table-filters-box
+{
+    margin-top: 15px;
+}
+
+.ar-sidebar-filters input.form-control,.ar-sidebar-filters button.btn
+{
+    background-color: #eee;
+    border-radius: 1px;
+    border: none;
+    box-shadow: none;
+}
+.ar-sidebar-filters button.btn
+{
+    font-size: 16px;
+}
+
+section.ar-filter-panel
+{
+    border-radius: 1px;
+    border: 3px solid #eee;
+    margin-top: 15px;
+}
+.ar-panel-head
+{
+    padding: 10px;
+    background-color: #eee;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+.ar-panel-head i
+{
+    float: right;
+}
+.ar-panel-body
+{
+    padding: 10px;
+    background-color: #fbfbfb;
+}
+.ar-panel-body .checkbox
+{
+    margin-top: 5px;
+}
+.ar-checkbox-more
+{
+    color: #f67f26;
+    cursor: pointer;
+}
+.ar-checkbox-more:hover
+{
+    color: #d47b35;
+}
+.ar-panel-body h3
+{
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    margin: 10px 0;
+}
+
+
+.ar-sidebar-filters .ar-panel-body input.form-control,.ar-sidebar-filters .ar-panel-body button.btn,.ar-sidebar-filters .ar-panel-body select.form-control
+{
+    background-color: #fff;
+    border-radius: 1px;
+    border: 2px solid #eee;
+    box-shadow: none;
+}
+.ar-sidebar-filters .ar-panel-body .form-group
+{
+    margin-bottom: 5px;
+}
+.ar-sidebar-filters .ar-panel-body button.btn
+{
+    font-size: 16px;
+    padding: 4px 10px;
+}
+.ar-sidebar-filters .ar-panel-body label
+{
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+/*///////////////////////////////////////////
+//////////////table//////////////////////////
+///////////////////////////////////////////*/
+
+.ar-table-box table.table
+{
+    text-align: center;
+}
+.ar-table-box .table>thead>tr>th, .ar-table-box .table>tbody>tr>th, .ar-table-box .table>tfoot>tr>th, .ar-table-box .table>thead>tr>td, .ar-table-box .table>tbody>tr>td, .ar-table-box .table>tfoot>tr>td
+{
+    text-align: center;
+    border: none;
+}
+th.ar-width100
+{
+    width: 100px;
+}
+.ar-table-box .table tr.ar-th
+{
+    background-color: #f67f26;
+    color: white;
+}
+.ar-table-box .table tr.ar-strip-light
+{
+    background-color: #f9f9f9;
+}
+.ar-table-box .table tr.ar-strip-dark
+{
+    background-color: #efefef;
+}
+img.ar-product-logo
+{
+    width: 100px;
+}
+.ar-table-box .table input[type=checkbox]
+{
+    width: 20px;
+    height: 20px;
+}
+a.ar-gotosite
+{
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: #f67f26;
+    transition: .3s all;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 3px 0;
+}
+a.ar-gotosite:hover
+{
+    background-color: #ab5200;
+}
+.ar-shownum span
+{
+    color: #f67f26;
+    font-weight: bold;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.ar-pagi-shownum div
+{
+    display: inline-block;
+}
+.ar-shownum span:hover
+{
+    color: #ab5200;
+}
+.ar-pagination
+{
+    float: right;
+}
+.ar-pagination a
+{
+    color: white;
+    text-decoration: none;
+    background-color: #f67f26;
+    transition: .3s all;
+    border-radius: 3px;
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+.ar-pagination a:hover
+{
+    background-color: #ab5200;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ar-compare-section-box
+{
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    background-color: #f67f26;
+    color: white;
+    width: 100%;
+    min-width: 1170px;
+    display: none;
+}
+.ar-compare-section-box section
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+.ar-compare-section-box section.ar-compare-text
+{
+    width: 275px;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+.ar-logo-compare
+{
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+}
+.ar-logo-compare img
+{
+    width: 100px;
+}
+.ar-logo-compare i
+{
+    position: absolute;
+    font-size: 14px;
+    padding: 0px 2px 1px;
+    text-align: center;
+    color: black;
+    top: -10px;
+    right: -7px;
+    border: 2px solid black;
+    border-radius: 9px;
+    background-color: white;
+    cursor: pointer;
+}
+.ar-compare-fixed,.ar-clear-fixed
+{
+    margin-left: 15px;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+}
+.ar-compare-fixed
+{
+    background-color: white;
+    color: #f67f26;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .3s all;
+}
+.ar-compare-fixed:hover
+{
+    color: #ce6619;
+}
+.ar-clear-fixed
+{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.compare-section-inner
+{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ar-hori-fields
+{
+    background-color: #eee;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.ar-hori-fields .form-group
+{
+    margin-right: 18px;
+}
+.ar-hori-fields .form-group input.form-control,.ar-hori-fields .form-group select.form-control
+{
+    width: 150px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: none;
+    height: 30px;
+}
+
+
+.ar-heading-row .col-xs-8
+{
+    width: 70%;
+}
+.ar-heading-row .col-xs-4
+{
+    width: 30%;
+}
+
+.ar-hori-fields .form-group.marginright0
+{
+    margin-right: 0;
+}
+.ComparisonRateText
+{
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+
+/*
+///////////////////loan comparison
+*/
+
+p.office-partner 
+{
+    text-align: center;
+    color: #ffffff;
+    background-color: #3cb878;
+}
+
+p.description {
+    text-align: center;
+    font-weight: bold;
+}
+
+table.table.partner-table td {
+    border: none;
+}
+
+table.partner-table td.ar-strip-light
+{
+    background-color: #f9f9f9;
+}
+
+table.partner-table td.ar-strip-dark
+{
+    background-color: #efefef;
+}
+
+table.partner-table tr.lf-table td:first-child {
+    background-color: black;
+    color: #fff;
+    text-align: left;
+}
+
+table.partner-table tr td h4 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+table.partner-table tr.lf-table td {
+    border: 2px solid #ececec;
+}
+
+table.partner-table tr.lf-table td {
+    text-align: center;
+}
+
+table.partner-table .none { 
+    font-size: 48px; 
+    font-family: "Arial"; 
+    color: rgb(246, 127, 38); 
+    line-height: 0.517;
+    text-align: center; 
+    left: 405px; 
+    top: 804.092px; 
+}
+
+span.money {
+  font-size: 14px;
+  color: rgb(99, 99, 99);
+  text-align: center;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #e6e5e5;
+  border-radius: 6px;
+  background-color: #eeeeee;
+}
+
+.ar-heading-row .detail {
+    font-weight: bold;
+    text-align: left;   
+}
+
+.ar-heading-row p {
+    text-align: center;
+}
+
+p.value, span.value {
+  font-size: 24px;
+  color: #f47526;
+  font-weight: bold;
+  text-align: center;
+}
+
+.summary-report {
+    margin-top: 30px;
+}
+
+a.ar-compare
+{
+    text-decoration: none;
+    color: black;
+    display: block;
+    background-color: #eeeeee;
+    transition: .3s all;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 3px 0;
+}
+a.ar-compare:hover
+{
+    background-color: #6b6868;
+}
+
+.compare-detail h2 {
+  color: #f47526;
+}
+
+.compare-detail table .ar-strip-light {
+    background-color: #f9f9f9;
+}
+
+
+.compare-detail table .ar-strip-dark
+{
+    background-color: #efefef;
+}
+
+.compare-detail table.table td {
+    border: none !important
+}
+
+.img {
+    max-width: 100%;
+    max-height: 100%
+}
+
+.brand-compare div {
+    text-align: center
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left
+}
+
+.brand-compare .column {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-right: 4px solid #efefef;
+    margin-bottom: 40px;
+}
+
+

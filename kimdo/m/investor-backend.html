@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Investor Backend</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="properticons/css/properticons.css" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/chosen.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" media="all" href="css/style.css" type="text/css">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrap"  style=" width:100%;">
+        <div class="extended-menu">
+            <div class="extended-menu-body">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Residential For Sale</a></li>
+                    <li><a href="#"><i class="fa fa-building-o" aria-hidden="true"></i> Commercial For Sale</a></li>
+                    <li><a href="#"><span class="menu-img-icon"><img src="images/new-30.png"></span> Buy Off the Plan</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i> Find an Agent</a></li>
+                    <li><a href="#"><i class="fa fa-usd" aria-hidden="true"></i> Sold Prices</a></li>
+                    <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> My Account</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log-out</a></li>
+                </ul>
+            </div>
+        </div><!-- end of .extended-menu -->
+        
+        
+        <header>
+            <div class="ar-menu residential-listing-menu">
+                <div class="col-xs-3 ar-menu-bars"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                <div class="col-xs-6 ar-menu-logo">
+                    <table>
+                      <tr>
+                         <td style="text-align: center; vertical-align: middle;">
+                              <img src="images/logo.png" class="img-responsive center-block ar-logo-image" />
+                         </td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="col-xs-3 ar-menu-right"><button class="back-top-btn ar-btn">Back</button></div>
+            </div>
+            
+        </header>
+        
+        <div class="clear"></div>
+        
+        <div class="content under_header_wrap ar-wraper">
+            
+            <div class="backend-main">
+                
+                <div class="rl-tabs-box" id="rl-tabs-main-box">
+                
+                    <section class="rl-choose-tab">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        Click here to view available tabs
+                    </section>
+                    
+                    <section class="rl-more-tab" scrollto="rl-tabs-main-box">
+                        Click below to expand tab
+                    </section>
+                    
+                    <section class="rl-tabs-container">
+                    
+                        <div class="rl-tab rl-tab-open rl-tab-init-open">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">My Profile</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body rl-tab-profile">
+                            
+                                
+                                <section class="ar-sign-social">
+                                    <h1>Update your profile as required below:</h1>
+                                    
+                                    <div class="ar-signup-fields">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="floatleft" for="exampleInputEmail1">Email</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floatleft" for="exampleInputPassword2">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword2">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="floatleft" for="exampleInputPassword3">Confirm Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword3">
+                                            </div>
+                                            
+                                            
+                                            <div class="backend-agreement-text">
+                                                <h3>You agree that by using this website No investment advice is being provided.</h3>
+                                                <p>This website is not designed for the purpose of providing personal financial or individual investment advice. Information provided does not take into account your particular investment objectives, financial situation or investment needs.</p>
+                                                <p>You should assess whether the information on this website is appropriate to your particular investment objectives, financial situation and investment needs. You should do this before making an investment decision on the basis of the information on this website. You can either make this assessment yourself or seek the assistance of any professional adviser.</p>
+                                                <p>Past performance is not necessarily a guide to future performance. The levels and bases of, and relief from, taxation can change. The value of any tax relief referred to depends upon the individual circumstances of the investor. For investments that can fluctuate in value, values may fall as well as rise and an investor may not get back the amount invested.</p>
+                                                <p>
+                                                <div class="termsconditions form-group">
+                                                <input id="termsconditions" type="checkbox" name="termsconditions" value="option1" />
+                                                <label for="termsconditions"><span><span></span></span>I have read and agree to the
+                                                    <a>Terms & Conditions</a></label>
+                                                </div>
+                                                </p>
+                                            </div>
+                                            
+                                            
+                                            <hr class="ar-form-hr" />
+
+                                            <div class="form-group">
+                                                <label class="floatleft">Country</label>
+                                                <select class="form-control">
+                                                    <option selected="selected">Select Your Country</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="floatleft">State</label>
+                                                <select class="form-control">
+                                                    <option selected="selected">Select Your State</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="floatleft">City</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+
+
+                                            <div class="form-group ar-aus-resident">
+                                                <p>Are you an Australian resident for taxation purpose?</p>
+                                            </div>
+
+
+                                            <div class="form-group ar-yes-no">
+
+                                                <div class="col-xs-6">
+                                                    <input id="option" type="radio" name="field" value="option1" checked />
+                                                    <label for="option"><span><span></span></span>YES</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <input id="option2" type="radio" name="field" value="option2">
+                                                    <label for="option2"><span><span></span></span>NO</label>
+                                                </div>
+
+                                            </div>
+                                            <!--
+                                            <div class="form-group ar-aus-resident ar-taxation">
+                                                <p>Estimated taxation rate that will be applied.</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" aria-describedby="basic-addon2">
+                                                    <span class="input-group-addon" id="basic-addon2">
+                                                        <i class="fa fa-percent" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            -->
+                                            <div class="form-group ar-ownership">
+                                                <h2>Please select ownership type intended for your investment property purchase.</h2>
+                                                <div>
+                                                    <input id="ownership1" type="radio" name="owner" value="option1" checked />
+                                                    <label for="ownership1"><span><span></span></span>Individual/Joint ownership - Most Common.</label>
+                                                </div>
+                                                <div>
+                                                    <input id="ownership2" type="radio" name="owner" value="option2">
+                                                    <label for="ownership2"><span><span></span></span>Self Managed Super Fund</label>
+                                                </div>
+                                                <div>
+                                                    <input id="ownership3" type="radio" name="owner" value="option3">
+                                                    <label for="ownership3"><span><span></span></span>Australian Registered Pty Ltd</label>
+                                                </div>
+                                            </div><!-- end of .ar-ownership -->
+
+                                            <div class="clear"></div>
+
+                                            <section class="ar-owner-box">
+
+                                                <h2>Please choose intended ownership type</h2>
+
+                                                <div class="form-group ar-owner-type">
+
+                                                    <div class="col-xs-6 ownertype">
+                                                        <input id="ownertype1" type="radio" name="ownertype" value="single" checked />
+                                                        <label for="ownertype1" class="owner-single"><span><span></span></span>Single</label>
+                                                    </div>
+                                                    <div class="col-xs-6 ownertype">
+                                                        <input id="ownertype2" type="radio" name="ownertype" value="joint">
+                                                        <label for="ownertype2" class="owner-joint"><span><span></span></span>Joint</label>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="clear"></div>
+
+                                                <div class="joint-section">
+
+                                                    <hr class="ar-ownerbox-hr" />
+
+                                                    <div class="form-group ar-ownership-split">
+
+                                                        <p>Please advice intended percentage ownership split:</p>
+
+
+                                                          <div>
+                                                            <label for="inputEmail3" class="col-xs-3 control-label">Investor 1</label>
+                                                            <div class="input-group col-xs-9">
+                                                                <input type="number" class="form-control" aria-describedby="basic-addon2">
+                                                                <span class="input-group-addon" id="basic-addon2">
+                                                                    <i class="fa fa-percent" aria-hidden="true"></i>
+                                                                </span>
+                                                            </div>
+                                                          </div>
+                                                          <div>
+                                                            <label for="inputPassword3" class="col-xs-3 control-label">Investor 2</label>
+                                                            <div class="input-group col-xs-9">
+                                                                <input type="number" class="form-control" aria-describedby="basic-addon2">
+                                                                <span class="input-group-addon" id="basic-addon2">
+                                                                    <i class="fa fa-percent" aria-hidden="true"></i>
+                                                                </span>
+                                                            </div>
+                                                          </div>
+
+
+                                                    </div><!-- end of .ar-ownership-split -->
+
+                                                    <hr class="ar-ownerbox-hr" />
+
+                                                    <div class="form-group ar-tax-income">
+
+                                                        <p>In order to calculate after tax costs we require you to enter a taxable 
+                                                            income amount alternatively select the applicable tax bracket.</p>
+
+
+                                                        <div>
+                                                            <input id="tax-income1" type="radio" name="tax-income1" value="option1" />
+                                                            <label for="tax-income1"><span><span></span></span>Investor 1 Taxable Income.</label>
+                                                        </div>
+                                                        <div class="input-group padding-left2em">
+                                                              <div class="input-group-addon"><i class="fa fa-usd"></i></div>
+                                                              <input type="number" class="form-control" id="exampleInputAmount">
+                                                        </div>
+
+
+                                                        <div>
+                                                            <input id="tax-bracket1" type="radio" name="tax-bracket1" value="tax-bracket1" />
+                                                            <label for="tax-bracket1"><span><span></span></span>Select Tax Bracket.</label>
+                                                        </div>
+                                                        <div class="input-group padding-left2em">
+                                                              <div class="input-group-addon"><i class="fa fa-usd"></i></div>
+                                                              <select class="form-control">
+                                                                    <option selected="selected">Select Tax Bracket</option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                </select>
+                                                        </div>
+
+
+                                                        <hr class="ar-ownerbox-hr" />
+
+
+                                                        <div>
+                                                            <input id="tax-income2" type="radio" name="tax-income2" value="option2" />
+                                                            <label for="tax-income2"><span><span></span></span>Investor 2 Taxable Income.</label>
+                                                        </div>
+                                                        <div class="input-group padding-left2em">
+                                                              <div class="input-group-addon"><i class="fa fa-usd"></i></div>
+                                                              <input type="number" class="form-control" id="exampleInputAmount">
+                                                        </div>
+
+
+                                                        <div>
+                                                            <input id="tax-bracket2" type="radio" name="tax-bracket2" value="tax-bracket2" />
+                                                            <label for="tax-bracket2"><span><span></span></span>Select Tax Bracket.</label>
+                                                        </div>
+                                                        <div class="input-group padding-left2em">
+                                                              <div class="input-group-addon"><i class="fa fa-usd"></i></div>
+                                                              <select class="form-control">
+                                                                    <option selected="selected">Select Tax Bracket</option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                </select>
+                                                        </div>
+
+
+
+                                                    </div><!-- end of .ar-tax-income -->
+
+                                                </div><!-- .joint-section -->
+
+                                            </section><!-- end of .ar-owner-box -->
+
+                                            <div class="form-group ar-deposit-type">
+
+
+                                                <h2>Please choose deposit type:</h2>
+
+                                                <div class="text-align-left">
+                                                    <input id="deposit-type" type="radio" name="deposit-type" value="option1" />
+                                                    <label for="deposit-type"><span><span></span></span>Use default deposit 
+                                                        of 20% of total purchase price.</label>
+                                                </div>
+
+                                                <div class="text-align-left">
+                                                    <input id="deposit-type2" type="radio" name="deposit-type" value="option2" />
+                                                    <label for="deposit-type2"><span><span></span></span>Your own deposit percentage.</label>
+                                                </div>
+                                                <div class="input-group padding-left2em width-60-large">
+                                                      <input type="number" class="form-control" id="exampleInputAmount">
+                                                      <div class="input-group-addon"><i class="fa fa-percent" aria-hidden="true"></i></div>
+                                                </div>
+
+                                                <div class="text-align-left">
+                                                    <input id="deposit-type3" type="radio" name="deposit-type" value="option2" />
+                                                    <label for="deposit-type3"><span><span></span></span>Fixed Deposit Amount.</label>
+                                                </div>
+                                                <div class="input-group padding-left2em width-60-large">
+                                                      <div class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></div>
+                                                      <input type="number" class="form-control" id="exampleInputAmount">
+                                                </div>
+
+
+                                                <h2 class="ar-deposit-h2">Select loan type for next investment</h2>
+
+
+                                                <div class="text-align-left">
+                                                    <input id="loan-type1" type="radio" name="loan-type" value="option1" />
+                                                    <label for="loan-type1"><span><span></span></span>Interest Only <light>(default)</light></label>
+                                                </div>
+
+                                                <div class="text-align-left">
+                                                    <input id="loan-type2" type="radio" name="loan-type" value="option1" />
+                                                    <label for="loan-type2"><span><span></span></span>Principal and interest</label>
+                                                </div>
+
+
+                                                <h2 class="ar-deposit-h2">Please choose a default interest rate for interest payment calculations:</h2>
+
+                                                <div class="text-align-left">
+                                                    <input id="default-interest1" type="radio" name="default-interest" value="option1" />
+                                                    <label for="default-interest1"><span><span></span></span>Use default interest rate of 5.62% Sample rate provided by </label>
+                                                    <div class="sample-rates">
+                                                        <img src="images/samplerates.png" /> UHomeLoan (for refinancing)
+                                                    </div><!-- end of .sample-rates -->
+                                                </div>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                <div class="text-align-left">
+                                                    <input id="default-interest2" type="radio" name="default-interest" value="option2" />
+                                                    <label for="default-interest2"><span><span></span></span>Your own interest rate.</label>
+                                                </div>
+                                                <div class="input-group padding-left2em width-60-large">
+                                                      <input type="number" class="form-control" id="exampleInputAmount">
+                                                      <div class="input-group-addon"><i class="fa fa-percent" aria-hidden="true"></i></div>
+                                                </div>
+
+
+                                                
+
+                                                
+
+
+                                            </div><!-- end of .ar-deposit-type  -->
+
+
+                                            <hr class="ar-ownerbox-hr" />
+
+
+
+
+                                            <button type="submit" class="submit-btn">Submit</button>
+
+
+                                        </form>
+                                    </div><!-- end of .ar-signup-fields -->
+
+
+
+                                </section>
+            
+            
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Recent Viewed Residential</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body backend-listing-tabs">
+                                
+                                <div class="cp-property-listing">
+                                    <div class="row cp-list-options">
+                                        <div class="col-xs-12">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input class="form-control" id="search-sort-by" placeholder="Search Address, Suburb or keywords" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- .cp-list-options -->
+
+
+                                    <section class="cp-listing-container">
+
+                                        <div class="ar-search-list">
+                                            <div class="search-item-carousel owl-carousel owl-theme">
+
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="estatelogo"><img src="images/nelson.png" class="img-responsive residential-logo"></div>
+
+                                            <div class="search-item-detail">
+                                                <div class="row">
+                                                    <div class="col-xs-9 col-sm-10 ar-property-text">
+                                                        <h2>4/325 Collinss Street, Neutral Bay, VIC</h2>
+                                                        <p>For Sale $460k including Furniture. Currently leased by Corporate Keys Australia who specialise in renting furnished apartments to their extensive database of corporate accounts, a savvy investor will be rewarded with rent...</p>
+                                                        <div class="commercial-table-wrapper">
+                                                            <div class="lt-left-col">Rental Yield: After Tax Profit:</div>
+                                                            <div class="lt-right-col">Price Undisclosed. Add your own price estimate</div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-2 ar-property-icons">
+                                                        <table class="table icon-table">
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bed"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>22</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bath"><i class="properticons properticons-baths"></i></td>
+                                                              <td class="icon-num"><span class="ar-shower-num">2</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-car"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>1</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div><!-- end of .ar-property-icons -->
+                                                </div>
+                                            </div><!-- end of .search-item-detail -->
+
+                                        </div>
+
+                                        <div class="ar-search-list">
+                                            <div class="search-item-carousel owl-carousel owl-theme">
+
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="estatelogo"><img src="images/nelson.png" class="residential-logo img-responsive"></div>
+
+                                            <div class="search-item-detail">
+                                                <div class="row">
+                                                    <div class="col-xs-9 col-sm-10 ar-property-text">
+                                                        <h2>8 Myross Ave, Ascot Vale, VIC</h2>
+                                                        <p>This picturesque, Federation period home proudly offers a stunning façade and magnificent street appeal. It is evident upon entering the residence that the elegant period features such as pressed metal ceilings, ornate corni...</p>
+                                                        <div class="commercial-table-wrapper">
+                                                            <div class="lt-left-col">Rental Yield: After Tax Profit:</div>
+                                                            <div class="lt-right-col">Price Undisclosed. Add your own price estimate</div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-2 ar-property-icons">
+                                                        <table class="table icon-table">
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bed"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>22</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bath"><i class="properticons properticons-baths"></i></td>
+                                                              <td class="icon-num"><span class="ar-shower-num">2</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-car"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>1</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div><!-- end of .ar-property-icons -->
+                                                </div>
+                                            </div><!-- end of .search-item-detail -->
+
+                                        </div>
+
+                                    </section><!-- .cp-listing-container -->
+
+
+
+                                </div><!-- .cp-property-listing -->
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Recent Viewed Commercial</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body backend-listing-tabs">
+                                
+                                <div class="cp-property-listing">
+                                    <div class="row cp-list-options">
+                                        <div class="col-xs-12">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input class="form-control" id="search-sort-by" placeholder="Search Address, Suburb or keywords" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- .cp-list-options -->
+
+
+                                    <section class="cp-listing-container">
+
+                                        
+                                        <div class="ar-search-list">
+                                            <div class="search-item-carousel owl-carousel owl-theme">
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/5.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                                </div>
+                                            </div>
+
+                                            <div class="estatelogo"></div>
+
+                                            <div class="search-item-detail search-item-commercial">
+
+                                                <div class="row marginrightleft0">
+                                                    <div class="col-xs-7 paddingright0 paddingleft0">
+                                                        <h2>Contact Agent</h2>
+                                                        <p class="commercial-address">Large Shed Facility - Great Cash Flows</p>
+                                                    </div>
+                                                    <div class="col-xs-5 paddingleft0 paddingright0">
+                                                        <img src="images/facey.gif" class="img-responsive commercial-estate-logo" />
+                                                    </div>
+                                                </div><!-- end of .row -->
+                                                <p class="commercial-industrial">Industrial / Warehouse, Retail / Shops, Offices</p>
+                                                <div class="clear"></div>
+
+                                                <div class="commercial-table-wrapper">
+                                                    <table class="table commercial-table">
+                                                        <tr>
+                                                            <td class="bordertop0">Occupancy:</td>
+                                                            <td class="bordertop0">Vacant Procession</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rental Return:</td>
+                                                            <td>5%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Land Area:</td>
+                                                            <td>750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Floor Area:</td>
+                                                            <td>650</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <p><a class="submit-btn cp-list-moredetail">More Details</a></p>
+                                            </div><!-- end of .search-item-detail -->
+
+                                        </div>
+
+                                        <div class="ar-search-list">
+                                            <div class="search-item-carousel owl-carousel owl-theme">
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                                </div>
+                                            </div>
+
+                                            <div class="estatelogo"></div>
+
+                                            <div class="search-item-detail search-item-commercial">
+
+                                                <div class="row marginrightleft0">
+                                                    <div class="col-xs-7 paddingright0 paddingleft0">
+                                                        <h2>$1,250,000</h2>
+                                                        <p class="commercial-address">Brand New Building, Brand New Lease, Circa 7% Yield!</p>
+                                                    </div>
+                                                    <div class="col-xs-5 paddingleft0 paddingright0">
+                                                        <img src="images/facey.gif" class="img-responsive commercial-estate-logo" />
+                                                    </div>
+                                                </div><!-- end of .row -->
+                                                <p class="commercial-industrial">Industrial / Warehouse, Retail / Shops, Offices</p>
+                                                <div class="clear"></div>
+
+                                                <div class="commercial-table-wrapper">
+                                                    <table class="table commercial-table">
+                                                        <tr>
+                                                            <td class="bordertop0">Occupancy:</td>
+                                                            <td class="bordertop0">Vacant Procession</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rental Return:</td>
+                                                            <td>5%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Land Area:</td>
+                                                            <td>750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Floor Area:</td>
+                                                            <td>650</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <p><a class="submit-btn cp-list-moredetail">More Details</a></p>
+                                            </div><!-- end of .search-item-detail -->
+
+                                        </div>
+
+                                    </section><!-- .cp-listing-container -->
+
+
+
+                                </div><!-- .cp-property-listing -->
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Saved/Favourites</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            <section class="rl-tab-body backend-listing-tabs">
+                                
+                                <div class="cp-property-listing">
+                                    <div class="row cp-list-options">
+                                        <div class="col-xs-12">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input class="form-control" id="search-sort-by" placeholder="Search Address, Suburb or keywords" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- .cp-list-options -->
+
+
+                                    <section class="cp-listing-container">
+
+                                        <div class="ar-search-list">
+                                            <div class="search-item-carousel owl-carousel owl-theme">
+
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="estatelogo"><img src="images/nelson.png" class="img-responsive residential-logo"></div>
+
+                                            <div class="search-item-detail">
+
+                                                <div class="row">
+                                                    <div class="col-xs-9 col-sm-10 ar-property-text">
+                                                        <h2>4/325 Collinss Street, Neutral Bay, VIC</h2>
+                                                        <p>For Sale $460k including Furniture. Currently leased by Corporate Keys Australia who specialise in renting furnished apartments to their extensive database of corporate accounts, a savvy investor will be rewarded with rent...</p>
+                                                        <div class="commercial-table-wrapper">
+                                                            <table class="table commercial-table">
+                                                                <tr>
+                                                                    <td class="bordertop0">Rental Yield:</td>
+                                                                    <td class="bordertop0">142pw</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>After Tax Profit:</td>
+                                                                    <td>0.8%</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-2 ar-property-icons">
+                                                        <table class="table icon-table">
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bed"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>22</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bath"><i class="properticons properticons-baths"></i></td>
+                                                              <td class="icon-num"><span class="ar-shower-num">2</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-car"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>1</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div><!-- end of .ar-property-icons -->
+                                                </div>
+                                                
+                                                <div class="saved-investor-notes">
+                                                    <h4>Investor Notes</h4>
+                                                    <p>Here are an awesome notes options for investors. Here are an awesome notes options for investors. Here are an awesome notes options for investors</p>
+                                                </div>
+                                                
+                                            </div><!-- end of .search-item-detail -->
+
+                                        </div>
+
+                                        <div class="ar-search-list">
+                                            <div class="search-item-carousel owl-carousel owl-theme">
+
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="estatelogo"><img src="images/nelson.png" class="residential-logo img-responsive"></div>
+
+                                            <div class="search-item-detail">
+
+                                                <div class="row">
+                                                    <div class="col-xs-9 col-sm-10 ar-property-text">
+                                                        <h2>8 Myross Ave, Ascot Vale, VIC</h2>
+                                                        <p>This picturesque, Federation period home proudly offers a stunning façade and magnificent street appeal. It is evident upon entering the residence that the elegant period features such as pressed metal ceilings, ornate corni...</p>
+                                                        <div class="commercial-table-wrapper">
+                                                            <table class="table commercial-table">
+                                                                <tr>
+                                                                    <td class="bordertop0">Rental Yield:</td>
+                                                                    <td class="bordertop0">55</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>After Tax Profit:</td>
+                                                                    <td>95%</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-2 ar-property-icons">
+                                                        <table class="table icon-table">
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bed"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>22</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-bath"><i class="properticons properticons-baths"></i></td>
+                                                              <td class="icon-num"><span class="ar-shower-num">2</span></td>
+                                                            </tr>
+                                                            <tr class="icon-row">
+                                                              <td class="icon-car"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                              <td class="icon-num"><span>1</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div><!-- end of .ar-property-icons -->
+                                                </div>
+                                                
+                                                <div class="saved-investor-notes">
+                                                    <h4>Investor Notes</h4>
+                                                    <p>Here are an awesome notes options for investors.</p>
+                                                </div>
+                                                
+                                            </div><!-- end of .search-item-detail -->
+
+                                        </div>
+
+                                    </section><!-- .cp-listing-container -->
+
+
+
+                                </div><!-- .cp-property-listing -->
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                    
+                    </section><!-- .rl-tabs-container -->
+                
+                </div><!-- .rl-tabs-box -->
+                
+                
+                
+                
+
+            </div><!-- end of .backend-main -->
+            
+            
+        </div><!-- end of content under_header_wrap -->
+
+        <div class="clear"></div>
+
+        <footer>
+            <div class="footerLinks">
+                <span><a>View Desktop Site</a></span><sep class="footer-sep">|</sep>
+                <span><a href="#">Terms of use</a></span><sep class="footer-sep">|</sep>
+                <span><a href="#">Privacy</a></span>
+            </div>
+          <div class="footer_lower_wrap"><span>Copyright&copy; 2016</span> Property Investors Only Pty Ltd All rights reserved.
+          </div>
+
+        </footer>
+    
+    </div>
+
+
+<!-- Currency Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">You've requested to show all prices in <span class="modelcurrencyval"></span></h4>
+      </div>
+      <div class="modal-body">
+          <p>Property Investors Only Pty Ltd does not guarantee the accuracy of the exchange rates used by the currency converter. You should confirm current rates before making any transactions or decisions that could be affected by changes in the exchange rates. Rates are for information purposes only and are subject to change without notice.</p>
+          <p>All transactions will be conducted in Australian Dollars.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+  <script type="text/javascript" src="js/js.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjMrWzuIXKuE5RsY-UHM5DUkLjkygPU8k&callback=initMap">
+</script>
+</html>

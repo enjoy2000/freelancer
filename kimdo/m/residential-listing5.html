@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Residential Listing Page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="properticons/css/properticons.css" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/chosen.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" media="all" href="css/style.css" type="text/css">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrap"  style=" width:100%;">
+        <div class="extended-menu">
+            <div class="extended-menu-body">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Residential For Sale</a></li>
+                    <li><a href="#"><i class="fa fa-building-o" aria-hidden="true"></i> Commercial For Sale</a></li>
+                    <li><a href="#"><span class="menu-img-icon"><img src="images/new-30.png"></span> Buy Off the Plan</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i> Find an Agent</a></li>
+                    <li><a href="#"><i class="fa fa-usd" aria-hidden="true"></i> Sold Prices</a></li>
+                    <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> My Account</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log-out</a></li>
+                </ul>
+            </div>
+        </div><!-- end of .extended-menu -->
+        
+        
+        <header>
+            <div class="ar-menu residential-listing-menu">
+                <div class="col-xs-3 ar-menu-bars"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                <div class="col-xs-6 ar-menu-logo">
+                    <table>
+                      <tr>
+                         <td style="text-align: center; vertical-align: middle;">
+                              <img src="images/logo.png" class="img-responsive center-block ar-logo-image" />
+                         </td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="col-xs-3 ar-menu-right"><button class="back-top-btn ar-btn">Back</button></div>
+            </div>
+            
+        </header>
+        
+        <div class="clear"></div>
+        
+        <div class="content under_header_wrap ar-wraper">
+            
+            <div class="rl-main">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#rl-images" aria-controls="rl-images" role="tab" data-toggle="tab">Images</a>
+                    </li>
+                    <li role="presentation"><a href="#rl-maps" aria-controls="rl-maps" role="tab" data-toggle="tab">Map</a></li>
+                    <li role="presentation"><a href="#rl-street" aria-controls="rl-street" role="tab" data-toggle="tab">Street View</a></li>
+                    <li role="presentation"><a href="#rl-walk" aria-controls="rl-walk" role="tab" data-toggle="tab">Walk Score</a></li>
+                    <li role="presentation"><a href="#rl-floor" aria-controls="rl-floor" role="tab" data-toggle="tab">Floor Plan</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="rl-images">
+                    
+                        <div class="search-item-carousel owl-carousel owl-theme">
+                            <div class="item">
+                                <img class="img-responsive" src="images/realestatepics/1.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="images/realestatepics/2.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="images/realestatepics/3.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="images/realestatepics/4.jpg">
+                            </div>
+
+
+                        </div>
+
+                        <div class="estatelogo"><img src="images/nelson.png"></div>
+                    
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="rl-maps">
+                        <div id="map"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="rl-street">Street View</div>
+                    <div role="tabpanel" class="tab-pane" id="rl-walk">Walk Score</div>
+                    <div role="tabpanel" class="tab-pane" id="rl-floor">Floor Plan</div>
+                </div><!-- end of .tab-content -->
+                
+                
+                
+                <div class="rl-main-body">
+                
+                    <div class="rl-main-heading">
+
+                        <h2 class="rl-main-h2">$460k Earns Rent of $670pw</h2>
+                        <table class="table hori-icons-table rl-dynamic-float">
+                            <tbody>
+                                <tr class="icon-dev-table table-icon-bed">
+                                    <td class="borderright1"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                    <td class="borderright3"><span>1</span></td>
+
+                                    <td class="borderright1"><i class="properticons properticons-baths"></i></td>
+                                    <td class="borderright3"><span>1</span></td>
+
+                                    <td class="borderright1"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                    <td><span>2</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div><!-- end of .rl-main-heading -->
+                    
+                    <hr class="margintop0 marginbottom0 rl-hb-sep" />
+
+                    <div class="rl-main-content">
+
+                        <h3>258 Ogilvie Street, Essendon, VIC 3040</h3>
+                        <p>Large Townhouse in the heart of Essendon</p>
+                        
+                        
+                        <div class="row auction-btns-row">
+                        
+                            <div class="col-xs-4 paddingright10 contactbtn">
+                                <button type="submit" class="submit-btn rl-ca-js-fun">Contact Agent</button>
+                            </div><!-- .col-xs-4 -->
+                            <div class="col-xs-4 paddingright10 paddingleft10 favbtn">
+                                <button type="submit" class="submit-btn"><i class="fa fa-heart" aria-hidden="true"></i>Add to Favourite</button>
+                            </div><!-- .col-xs-4 -->
+                            <div class="col-xs-4 paddingleft10 sharebtn">
+                                <button type="submit" class="submit-btn shareoptionsbtn">Share</button>
+                            </div><!-- .col-xs-4 -->
+                            
+                        </div><!-- .row -->
+                        
+                        <div class="row auction-details">
+                        
+                            <div class="col-xs-4 paddingright10 auctionbtnWrap">
+                                <button type="submit" class="submit-btn auction-btn">
+                                    <img src="images/auction45.png" />
+                                    <span class="auction-word">Auction</span>
+                                </button>
+                            </div><!-- .col-xs-4 -->
+                            <div class="col-xs-4 paddingright10 paddingleft10 auctiondate">
+                                <h4>Auction Date:</h4>
+                                <p>Fri 31-Oct-14 at 11:00AM</p>
+                                <button class="submit-btn">Add to Calendar</button>
+                            </div><!-- .col-xs-4 -->
+                            <div class="col-xs-4 paddingleft10 auctionlocation">
+                                <h4>Auction Location:</h4>
+                                <p>ANZ Head Office.</p>
+                            </div><!-- .col-xs-4 -->
+                            
+                        </div><!-- .row -->
+                        
+                        
+                    </div><!-- end of .rl-main-content -->
+                
+                </div><!-- .rl-main-body -->
+                
+                
+                <div class="rl-termsbox">
+                    <h3>You agree that by using this website No investment advice is being provided.</h3>
+                    <p>This website is not designed for the purpose of providing personal financial or individual investment advice. Information provided does not take into account your particular investment objectives, financial situation or investment needs. <a class="termsbox-more">More...</a></p>
+                    
+                    <p class="terms-more-text">You should assess whether the information on this website is appropriate to your particular investment objectives, financial situation and investment needs. You should do this before making an investment decision on the basis of the information on this website. You can either make this assessment yourself or seek the assistance of any professional adviser. Past performance is not necessarily a guide to future performance. The levels and bases of, and relief from, taxation can change. The value of any tax relief referred to depends upon the individual circumstances of the investor. For investments that can fluctuate in value, values may fall as well as rise and an investor may not get back the amount invested. Prior to the execution of a real estate purchase, users are advised to consult with your broker or other financial representative to verify pricing or other information. Property Investors Only Pty Ltd, its affiliates, information providers or content partners shall have no liability for investment decisions based on the information provided. neither, Property Investors Only Pty Ltd, nor its affiliates, information providers or content partners warrant or guarantee the timeliness, sequence, accuracy or completeness of this information. Additionally, there are no warranties as to the results obtained from the use of the information.</p>
+                </div><!-- .rl-termsbox -->
+                
+                
+                
+                <div class="rl-inspection-box">
+                    
+                    <h1><i class="fa fa-clock-o" aria-hidden="true"></i> INSPECTION TIMES</h1>
+                    
+                    <section class="rl-inspection-details">
+                    
+                        <div class="rl-inspection-row">
+                            <p>Wed 31st August, 2016 <span class="rl-inspection-dash">-</span><br class="rl-inspection-br" /> 12:00 AM - 12:00 AM</p>
+                            <button class="submit-btn">Add to Calendar</button>
+                        </div><!-- .rl-inspection-row -->
+                        <div style="clear: both"></div>
+                        <div class="rl-inspection-row">
+                            <p>Thu 22nd September, 2016 <span class="rl-inspection-dash">-</span><br class="rl-inspection-br" /> 12:00 AM - 12:00 AM</p>
+                            <button class="submit-btn">Add to Calendar</button>
+                        </div><!-- .rl-inspection-row -->
+                        
+                        
+                        <div class="rl-more-inspection">
+                            
+                            <div class="rl-inspection-row">
+                                <p>Wed 28th September, 2016 <span class="rl-inspection-dash">-</span><br class="rl-inspection-br" /> 12:00 AM - 12:00 AM</p>
+                                <button class="submit-btn">Add to Calendar</button>
+                            </div><!-- .rl-inspection-row -->
+                            <div style="clear: both"></div>
+                            <div class="rl-inspection-row">
+                                <p>Wed 12th October, 2016 <span class="rl-inspection-dash">-</span><br class="rl-inspection-br" /> 12:00 AM - 12:00 AM</p>
+                                <button class="submit-btn">Add to Calendar</button>
+                            </div><!-- .rl-inspection-row -->
+                            
+                        </div><!-- end of .rl-more-inspection -->
+                        
+                        
+                        <div style="clear: both"></div>
+                        
+                        
+                    </section><!-- .rl-inspection-details -->
+                    
+                    <div class="rl-inspection-more-btn">
+                        Show All
+                    </div>
+                    
+                </div><!-- .rl-inspection-box -->
+                
+                
+                <div class="rl-agentdetails-box">
+                
+                    <h1>AGENT DETAILS</h1>
+                    
+                    <div class="agentdetails">
+                        <div class="agentcontent">
+                            <section class="img-name-num">
+                                <span class="rl-agent-img"><img src="images/simon.jpg" /></span>
+                                <span class="rl-agent-nameNum">
+                                    <h3>Simon Gondolph</h3>
+                                    <p>Phone: &nbsp;0409 852 52</p>
+                                    <p>Mobile: &nbsp;0409 852 52</p>
+                                    <a class="submit-btn rl-cabtn rl-ca-js-fun">Contact Agent</a>
+                                </span>
+                            </section>
+                            
+                            <section class="rl-links-logo">
+                                <a href="" class="rl-agent-link">Other listings represented by Simon Gondolph</a>
+                                <img src="images/nelson.png" class="img-responsive center-block rl-agent-logo" />
+                                <h3>Luxury Real Estate</h3>
+                                <p>1 Freshwater Place Southbank, VIC 3006</p>
+                                <a href="" class="rl-agent-link">Other property listings from Luxury Real Estate</a>
+                            </section>
+                            
+                        </div><!-- .agentcontent -->
+                    </div><!-- .agentdetails -->
+                
+                </div><!-- .rl-agentdetails-box -->
+                
+                
+                <div class="rl-tabs-box" id="rl-tabs-main-box">
+                
+                    <section class="rl-choose-tab">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        Click here to view available information tabs
+                    </section>
+                    
+                    <section class="rl-more-tab" scrollto="rl-tabs-main-box">
+                        Click below to expand information tab
+                    </section>
+                    
+                    <section class="rl-tabs-container">
+                    
+                        <div class="rl-tab rl-tab-open rl-tab-init-open">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Overview</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body rl-tab-overview">
+                            
+                                <h2>Indicative Total Purchase Costs:</h2>
+                                <table class="table table-condensed table-striped purchase-cost-table">
+                                    <tr>
+                                        <td class="rl-indicative-left-col">Purchase Price</td>
+                                        <td class="rl-purchase-btns">
+                                            <span class="purchase-val-span">$<input type="number" readonly="true" value="495000" class="form-control signup-input"></span>
+                                            <span class="purchase-btn-span">
+                                                <button class="submit-btn rl-purchase-update">Update</button>
+                                                <button class="submit-btn rl-purchase-reset">Re-set</button>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stamp Duty Payable (VIC)</td>
+                                        <td>$21,120.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trasfer Fee (VIC)</td>
+                                        <td>$1,342.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mortgage Registration Fee (VIC)</td>
+                                        <td>$102.40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Foreign Buyer 7% Duty (VIC)</td>
+                                        <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Purchase Price:</td>
+                                        <td class="total-purchase-price">$517,564.90</td>
+                                    </tr>
+                                </table>
+                                
+                                <p class="modify-price">
+                                    Additional duty applies to any arrangement or transaction that involves the transfer of an interest in residential property to a foreign purchaser. 
+                                        <label>
+                                          <input type="checkbox"> Select if you are a foreign purchaser to have the duty added to the total purchase price.
+                                        </label>
+                                </p>
+                                
+                                <p class="modify-price">
+                                    <strong>Note:</strong> Members can modify the purchase price. All corresponding tabs and data will be adjusted to reflect the new price.
+                                </p>
+                                
+                                <a href="" class="rl-interested-link">Interested? Register today, it's free of charge.</a>
+                                
+                                <hr class="rl-hb-sep">
+                                
+                                <h2>Loan Amount</h2>
+                                <table class="table table-condensed loan-amount-table">
+                                    <tr class="active">
+                                        <td>Deposit</td>
+                                        <td>
+                                            <p>$99,000 (Based on a 20% deposit)</p>
+                                            <a href="">Become a free Member</a> to tailor to your own situation
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LVR (Loan to Value Ratio) 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>LVR (Loan to value ratio)</h2>
+                                                      <p class='rl-tooltip-p'>LVR is calculated by dividing the loan amount ($843,720) by the purchase price or bank valuation of the property ($1,017,446) Purchase price used is an indication/estimate only.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true"></i>
+                                        </td>
+                                        <td>84.56%</td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>
+                                            <p>Lenders Mortgage Insurance 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Lenders Mortgage Insurance</h2>
+                                                      <p class='rl-tooltip-p'>Depending on your lender's requirements, Lenders Mortgage Insurance (LMI) allows property investors to borrow up to 95% of the purchase price of the property, with a lower deposit than is usually required.</p>
+                                                      <p class='rl-tooltip-p'>Lenders will traditionally lend up to 80% of the value of a property without charging LMI, effectively requiring investors to pay a deposit of at least 20% of the value of the property. By charging Lenders Mortgage Insurance, lenders are able to lend up to 95% of the value of the property. Lenders Mortgage Insurance protects the lender if a borrower is unable to meet their mortgage repayments and the property has to be sold quickly.</p>
+                                                      <p class='rl-tooltip-p'>According to the ATO lender's mortgage insurance can be classified as a borrowing expense which can be claimed as an income tax deduction for taking out a loan to purchase a rental property.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true"></i>
+                                            </p><a class="fullDisclaimerBtn">View Full Disclaimer</a>
+                                        </td>
+                                        <td>
+                                            <p>$4138 <a class="rl-deleteLMI">Delete LMI estimate</a></p>
+                                            All LMI premium amounts are estimates only and are to be seen as an indication of potential costs.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Loan Amount</td>
+                                        <td>$422,703<br />Includes $4,138 LMI premium.</td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>Interest Rate</td>
+                                        <td>5.62%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sample rate provided by</td>
+                                        <td>
+                                            <img src="images/samplerates.png"><br />
+                                            UHomeLoan(for refinancing)
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <p class="free-memb-p"><a href="">Become a free Member</a> to use you own rates</p>
+                                
+                                <hr class="rl-hb-sep">
+                                
+                                <h2>Weekly Repayments</h2>
+                                <table class="table table-condensed weekly-table">
+                                    <tr class="active">
+                                        <td>Interest Only</td>
+                                        <td>$456.84 per week</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Principal and Interest</td>
+                                        <td>$561.23 per week</td>
+                                    </tr>
+                                </table>
+                                
+                                <hr class="rl-hb-sep">
+                                
+                                <h2>Investment Return</h2>
+                                <table class="table table-condensed investment-return-table">
+                                    <tr class="active">
+                                        <td class="widthsetter">System Generated Estimated Rental</td>
+                                        <td>
+                                            <span class="rent-weekly-annum">
+                                                $<input type="number" readonly="true" value="450" class="form-control rl-system-week signup-input"> per week<br />
+                                                <span class="rl-annum">($23,400 per annum)</span>
+                                            </span>
+                                            <span class="rl-up-reset">
+                                                <button class="submit-btn rl-rent-update">Update</button>
+                                                <button class="submit-btn rl-rent-reset">Re-set</button>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td colspan="2" class="rental-exp-wrap">
+                                            <div class="rent-example-wrap">
+                                                <div class="rent-example-text">Calculated based on 3 similar properties currently available to rental. </div>
+                                                <div class="rent-example-btn">
+                                                    <button class="submit-btn view-rental-exp">View Rental Examples</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rental Yield <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Rental Yield</h2>
+                                                      <p class='rl-tooltip-p'>Rental yield is calculated by dividing the annual gross rental income that a property generates divided by the purchase price of the property.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true"></i>
+                                        </td>
+                                        <td>4.73%</td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>Property Expenses</td>
+                                        <td>
+                                            <p>Total: $1,577</p>
+                                            <a class="rl-add-additional-exp">View or add additional associated expenses</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="active rl-additional-expenses">
+                                        <td>Maintenace</td>
+                                        <td>
+                                            <span>Not Supplied - </span><br />
+                                            <a>Click to add an estimate</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="active rl-additional-expenses">
+                                        <td>Water Levy</td>
+                                        <td>
+                                            <span>Not Supplied - </span><br />
+                                            <a>Click to add an estimate</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="active rl-additional-expenses">
+                                        <td>Council rates</td>
+                                        <td>
+                                            <span>Not Supplied - </span><br />
+                                            <a>Click to add an estimate</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="active rl-additional-expenses">
+                                        <td>Strata/Body corporate rates</td>
+                                        <td>
+                                            <span>Not Supplied - </span><br />
+                                            <a>Click to add an estimate</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="active rl-additional-expenses">
+                                        <td></td>
+                                        <td>
+                                            <button class="submit-btn rl-up-property-exp">Update property expenses</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Landlord Insurance <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Landlord Insurance</h2>
+                                                      <p class='rl-tooltip-p'>Landlord Insurance is an insurance policy that covers a property owner from financial losses connected with rental properties.The policy covers the building, with the option of insuring any contents that belong to the landlord that are inside.</p>
+                                            <p class='rl-tooltip-p'>The policy will normally cover standard perils such as fire, lightning, explosion, earthquake, storm, flood, escape of water/oil, subsidence, theft and malicious damage. Each insurance policy is different and may or may not include all these items.</p>
+                                            <p class='rl-tooltip-p'>Optional coverage might include accidental damage, malicious damage by tenant, terrorism, legal protection, alternative accommodation costs, contents insurance, rent guarantee insurance, and liability insurance.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true"></i></td>
+                                        <td>
+                                            <p>$290.00 (VIC)</p>
+                                            Sponsored by: <span class="rl-ur-logo">Your logo here</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>Property Management fee <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Property Management fee</h2>
+                                                      <p class='rl-tooltip-p'>This covers the service of a 'Property Manager' who will be the liaison between the property owner and the actual tenant/leasee tenant.Duties of property management generally will include a minimum of these basic tasks;</p>
+                                            <p class='rl-tooltip-p'><ul class='rl-tooltip-ul'><li>The full and proper screening or testing of an applicant's credit, criminal history, rental history and ability to pay.</li><li>Lease contracting or accepting rent using legal documents approved for the area in which the property is located.</li><li>Routine inspections on behalf of the owner.</li><li>Mitigation and remediation regarding any maintenance issues, generally within a budget, with prior or conveyed consent via a Limited Power of Attorney legally agreed to by the property owner.</li></ul></p>
+                                            <p class='rl-tooltip-p'>The fee charged by an agent will vary; we have used 5.5% as an example for calculations purposes.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true"></i></td>
+                                        <td>
+                                            <p>$1,128.00 per annum</p>
+                                            (Based on management rate of 5.5%)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cost per week <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Cost per week</h2>
+                                                      <p class='rl-tooltip-p'>The estimated cash surplus/shortfall per week to hold this property after expenses have been deducted from estimated rental income.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true"></i></td>
+                                        <td>$37 per week</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p>Cash Flow Negative Based on Interest Only loan repayments. <br />To tailor results to your own circumstances.</p>
+                                            <a href="">Sign up as a free member</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <hr class="rl-hb-sep">
+                                
+                                <h2>After Tax Calculations</h2>
+                                <table class="table table-condensed tax-cal-table">
+                                    <tr class="active">
+                                        <td class="tax-widthsetter">Depreciation allowance</td>
+                                        <td>
+                                            <span class="rent-weekly-annum">
+                                                $55 per week<br />
+                                                <span class="rl-annum">($540 per annum)</span>
+                                            </span>
+                                            <span class="rl-up-reset rl-up-reset-decre">
+                                                <button class="submit-btn rl-tax-reset">Re-set</button>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>
+                                            Sponsored by:<br />
+                                            <span class="rl-ur-logo">Your logo here</span>
+                                        </td>
+                                        <td>
+                                            Did you know you could possibly claim thousands on depreciation allowances for this property? 
+                                            <a class="depreciationCal">Click here to calculate potential depreciation allowances.</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cost per week after Tax</td>
+                                        <td>$23.42 per week - Tax Loss</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p>Based on an investor taxable income tax rate of 37% <br />To tailor results to your own circumstances. </p>
+                                            <p><a href="">Sign up as a free member</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>
+                                            Net Rental Yield
+                                        </td>
+                                        <td>
+                                            4.41%
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Income Statement</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body">
+                            
+                                
+                                <h2 class="income-statement-h2"><span>Note:</span> Rental Increases & Misc Expense increases are based on 3% yearly increases.</h2>
+                                <div class="table-responsive">
+                                
+                                    <table class="table table-condensed income-statement-table">
+                                        <tr>
+                                            <th></th>
+                                            <th>Year 1</th>
+                                            <th>Year 2</th>
+                                            <th>Year 3</th>
+                                            <th>Year 4</th>
+                                            <th>Year 5</th>
+                                            <th>Year 10</th>
+                                        </tr>
+                                        <tr class="activeMod">
+                                            <td>Rental:</td>
+                                            <td>$45,469</td>
+                                            <td>$46,833</td>
+                                            <td>$48,238</td>
+                                            <td>$49,686</td>
+                                            <td>$51,176</td>
+                                            <td>$59,327</td>
+                                        </tr>
+                                        <tr class="darkerActive">
+                                            <td>Minus:</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="activeMod">
+                                            <td>Agent Management Fee:</td>
+                                            <td>$2,501</td>
+                                            <td>$2,576</td>
+                                            <td>$2,653</td>
+                                            <td>$2,733</td>
+                                            <td>$2,815</td>
+                                            <td>$3,263</td>
+                                        </tr>
+                                        <tr class="darkerActive">
+                                            <td>Interest:</td>
+                                            <td>$22,690</td>
+                                            <td>$22,690</td>
+                                            <td>$22,690</td>
+                                            <td>$22,690</td>
+                                            <td>$22,690</td>
+                                            <td>$22,690</td>
+                                        </tr>
+                                        <tr class="activeMod">
+                                            <td>Misc Expenses:</td>
+                                            <td>$290</td>
+                                            <td>$299</td>
+                                            <td>$308</td>
+                                            <td>$317</td>
+                                            <td>$326</td>
+                                            <td>$378</td>
+                                        </tr>
+                                        <tr class="darkerActive ar-theme-color">
+                                            <td>Cash Loss/Profit:</td>
+                                            <td>$19,989</td>
+                                            <td>$21,269</td>
+                                            <td>$22,588</td>
+                                            <td>$23,946</td>
+                                            <td>$25,345</td>
+                                            <td>$32,996</td>
+                                        </tr>
+                                        <tr class="activeMod">
+                                            <td>Depreciation allowances:</td>
+                                            <td colspan="6" class="text-align-center"><a class="depreciationCal">Click here to calculate potential depreciation allowances.</a></td>
+                                        </tr>
+                                        <tr class="darkerActive">
+                                            <td>Total Taxable loss/profit:</td>
+                                            <td>$19,989</td>
+                                            <td>$21,269</td>
+                                            <td>$22,588</td>
+                                            <td>$23,946</td>
+                                            <td>$25,345</td>
+                                            <td>$32,996</td>
+                                        </tr>
+                                        <tr class="activeMod">
+                                            <td>Tax Credit:</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                        </tr>
+                                        <tr class="darkerActive #f47526">
+                                            <td>After Tax Loss/Profit 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>After Tax Loss/Profit</h2>
+                                                      <p class='rl-tooltip-p'>The estimated after tax cash surplus/shortfall to hold this property. This includes estimated refunds potentially available after depreciation and negative gearing tax allowances.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                            </td>
+                                            <td>$19,989</td>
+                                            <td>$21,269</td>
+                                            <td>$22,588</td>
+                                            <td>$23,946</td>
+                                            <td>$25,345</td>
+                                            <td>$32,996</td>
+                                        </tr>
+                                        <tr class="activeMod">
+                                            <td>Weekly Amount:</td>
+                                            <td>$384</td>
+                                            <td>$409</td>
+                                            <td>$434</td>
+                                            <td>$460</td>
+                                            <td>$487</td>
+                                            <td>$635</td>
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Property Details</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body rl-property-details">
+                            
+                                <h2 class="property-details-h2 ar-theme-color">Currently earning $670 Nett per week. Invest in a cash cow or move in.</h2>
+                                <p>For Sale $460k including Furniture.</p>
+                                <p>Currently leased by Corporate Keys Australia who specialise in renting furnished apartments to their extensive database of corporate accounts, a savvy investor will be rewarded with rent of $670 per week with no management fees to be deducted from this amount. The property will be sold FULLY FURNISHED allowing you to continue with the agreement the owner has in place with Corporate Keys. </p>
+                                <p>Completed BMT Tax Depreciation report will be provided to any purchasing investors showing available depreciation allowances of between $6769 and $6617 per year until 2019. </p>
+                                <p>Looking to move in? The owner has secured a special release agreement with Corporate Keys should you wish to occupy the property. The choice is yours.</p>
+                                <p>The apartment is in pristine condition having been maintained with regular housekeeping and carpet steam cleaning. </p>
+                                <p>This inviting 35th floor apartment offers instant enjoyment of one of the inner city's most alluring addresses, between Crown Entertainment Complex and the vibrant Southgate precinct.</p>
+                                <p>It presents state-of-the-art open plan interiors tailored to maximise space and natural light. Resort style facilities are available on the 10th floor which includes a fully equipped gym, huge 25-metre indoor pool, spa, sauna, theatre, amazing half acre gardens with numerous BBQ areas and a business centre & conference room</p>
+                                <p>The tiled entrance hall leads into a large living and dining area with a glorious southwest aspect. Schemed in stone benchtops and mirror splashbacks, the sleek kitchen incorporates stainless steel SMEG appliances including an oven, cooktop, dishwasher and microwave.
+Behind the oversized sliding door is the double bedroom with generous built-in robes. There is also a beautiful fully tiled bathroom with a walk-in shower.
+Features include a European laundry, ducted reverse cycle air-conditioning. A integrated workstation/study nook is perfect for professionals.</p>
+                                <p>Property is currently occupied so inspection is by appointment only.
+Property is being sold privately. Corporate Keys has simply listed this property on behalf of the property owner. </p>
+                            
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">My Investment</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body">
+                            
+                                <table class="table table-condensed rl-myinvestment-table">
+                                    <tr>
+                                        <th colspan="2">My Investment</th>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Weekly Repayments:</td>
+                                        <td>$436 per week <br class="investment-br" />(Interest Only)</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Rental Estimator™ 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Rental Estimator™</h2>
+                                                      <p class='rl-tooltip-p'>Rental Estimator™ is an estimate of the weekly rental that could be earned for this property. Our estimate is calculated by taking the average advertised rent for properties with the same number of bedrooms, bathrooms and car spaces. Properties are only included in calculations if they match the same property type and are located within the same suburb.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>$874 per week</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Rental Yield: 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Rental Yield</h2>
+                                                      <p class='rl-tooltip-p'>Rental yield is calculated by dividing the annual gross rental income that a property generates divided by the purchase price of the property.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>9.88%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Weekly Cost/Profit: 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Cost per week</h2>
+                                                      <p class='rl-tooltip-p'>The estimated cash surplus/shortfall per week to hold this property after expenses have been deducted from estimated rental income.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>$384 per week</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <img src="images/cash_flow_positive.png" />
+                                            <img src="images/cash_flow_negative.png" />
+                                        </td>
+                                    </tr>
+                                    <tr class="darkerActive after-tax-return">
+                                        <td colspan="2">After Tax Returns</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Net Rental Yield: 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Net Rental Yield</h2>
+                                                      <p class='rl-tooltip-p'>Net Rental Yield is calculated by subtracting inputted property related expenses including landlord insurance, property management fee, maintenance, water levy, council rates and Strata/Body corporate rates from the annual gross rental income that a property generates.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>9.28%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Weekly Cost/Profit: 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Weekly Cost/Profit</h2>
+                                                      <p class='rl-tooltip-p'>The estimated after tax cash surplus/shortfall to hold this property. This includes estimated refunds potentially available after depreciation and negative gearing tax allowances.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>$384 per week</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <img src="images/positively_geared.png" />
+                                            <img src="images/negatively_geared.png" />
+                                        </td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Cash-on-cash Rental Yield: 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Cash-on-cash Rental Yield</h2>
+                                                      <p class='rl-tooltip-p'>Cash on Cash Return is the property's annual net cash flow divided by the net investment, expressed as a percentage.</p>
+                                                      <p class='rl-tooltip-p'>In the case of this property the estimated net cash flow is $19,988.54, and the cash invested in the property is estimated at $ $92,000.00,  the Cash on Cash return is estimated to be 21.73&;37; ($19,988.54 / $92,000.00).  The net investment in property is the cost of the property less the amount you borrowed.</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>21.73%</td>
+                                    </tr>
+                                </table>
+                                
+                                
+                                <table class="table table-condensed rl-myinvestment-table">
+                                    <tr>
+                                        <th colspan="2">Southbank Investment Snap Shot</th>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td class="investment-widthsetter">Number Sold:</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Median House Price:</td>
+                                        <td>$0</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Median Apartment Price:</td>
+                                        <td>$0</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Average Days on Market:</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>Percentage of Renters: 
+                                            <i data-toggle="tooltip" data-html="true" data-placement="right" 
+                                               title="<h2 class='rl-tooltip-h2'>Percentage of Renters</h2>
+                                                      <p class='rl-tooltip-p'>Percentage of renters is calculated by dividing the number under</p>" 
+                                               class="fa fa-question-circle" aria-hidden="true">
+                                            </i>
+                                        </td>
+                                        <td>44%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td class="rl-investment-note" colspan="2">Based on ABS data Source: 2011 Census of Population and Housing</td>
+                                    </tr>
+                                </table>
+                                
+                                
+                                
+                                <table class="table table-condensed rl-myinvestment-table">
+                                    <tr>
+                                        <th colspan="2">Southbank Growth Figures (Units)</th>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td class="investment-widthsetter">Quarterly Growth:</td>
+                                        <td>16%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>12 month Growth:</td>
+                                        <td>17.5%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>3 Year Growth % P.A:</td>
+                                        <td>17%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>5 Year Growth % P.A:</td>
+                                        <td>18%</td>
+                                    </tr>
+                                    <tr class="activeMod">
+                                        <td>10 Year Growth % P.A:</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </table>
+                            
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Graphs</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body rl-graph-body">
+                                
+                                <h2 class="graph-body-h2 ar-theme-color">Currently earning $670 Nett per week. Invest in a cash cow or move in.</h2>
+                                <p>The value of the investment, the income, its associated expenses and laws associated with property ownership can go down or up, as well as having applicable laws changing and thus can't be guaranteed.<br />You may get back less than you invested.</p>
+                                
+                                <section>
+                                    <h2 class="graph-body-h2 ar-theme-color graph-head">Who's helping you pay your investment?</h2>
+                                    <select class="form-control rl-graph-select">
+                                      <option>Year 1</option>
+                                      <option>Year 2</option>
+                                      <option>Year 3</option>
+                                      <option>Year 4</option>
+                                      <option>Year 5</option>
+                                      <option>Year 10</option>
+                                    </select>
+                                    <div id="rl-piechart-1"></div>
+                                </section>
+                                
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab rl-rental-estimator-container">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Rental Estimator<sup>TM</sup></span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body rl-rental-estimator-tab">
+                            
+                                <h2>System generated average</h2>
+                                <p>The system generated average is calculated by taking the average advertised rent for properties with the same number of bedrooms, bathrooms and car spaces. Properties are only included in calculations if they match the same property type and are located within the same suburb.</p>
+                                <h2>$874 per week</h2>
+                                <p>(Based on average of 39 matching rental properties.)</p>
+                                <h1>Similar properties currently listed for rent in Southbank</h1>
+                            
+                                
+                                <div class="rl-rental-tab-listing">
+                                
+                                    <div class="rl-rental-slider">
+                                        <div class="rental-item-carousel owl-carousel owl-theme">
+                        
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                            </div>
+
+                                        </div>
+                                    </div><!-- .rl-rental-slider -->
+                                    
+                                    <div class="rl-rental-info">
+                                        <h2>$950 per week</h2>
+                                        <p>8304/1 Freshwater Place, Southbank, VIC 3006</p>
+                                        <p>APARTMENT</p>
+                                        
+                                        <table class="table hori-icons-table">
+                                            <tr class="icon-dev-table table-icon-bed">
+                                                <td class="borderright1"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                <td class="borderright3"><span>10</span></td>
+
+                                                <td class="borderright1"><i class="properticons properticons-baths"></i></td>
+                                                <td class="borderright3"><span>9</span></td>
+
+                                                <td class="borderright1"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                <td><span>3</span></td>
+
+                                            </tr>
+                                        </table>
+                                        
+                                        <button class="submit-btn rl-rental-more-btn">More Details</button>
+                                        
+                                        
+                                    </div><!-- .rl-rental-info -->
+                                    
+                                </div><!-- .rl-rental-tab-listing -->
+                                
+                                <hr />
+                                
+                                <div class="rl-rental-tab-listing">
+                                
+                                    <div class="rl-rental-slider">
+                                        <div class="rental-item-carousel owl-carousel owl-theme">
+                        
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                            </div>
+
+                                        </div>
+                                    </div><!-- .rl-rental-slider -->
+                                    
+                                    <div class="rl-rental-info">
+                                        <h2>$695 per week</h2>
+                                        <p>1611/9 Power Street, Southbank, 3006</p>
+                                        <p>APARTMENT</p>
+                                        
+                                        <table class="table hori-icons-table">
+                                            <tr class="icon-dev-table table-icon-bed">
+                                                <td class="borderright1"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                <td class="borderright3"><span>10</span></td>
+
+                                                <td class="borderright1"><i class="properticons properticons-baths"></i></td>
+                                                <td class="borderright3"><span>5</span></td>
+
+                                                <td class="borderright1"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                <td><span>13</span></td>
+
+                                            </tr>
+                                        </table>
+                                        
+                                        <button class="submit-btn rl-rental-more-btn">More Details</button>
+                                        
+                                        
+                                    </div><!-- .rl-rental-info -->
+                                    
+                                </div><!-- .rl-rental-tab-listing -->
+                                
+                                <hr />
+                                
+                                <div class="rl-rental-tab-listing">
+                                
+                                    <div class="rl-rental-slider">
+                                        <div class="rental-item-carousel owl-carousel owl-theme">
+                        
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/4.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/3.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/1.jpg">
+                                            </div>
+                                            <div class="item">
+                                                <img class="img-responsive" src="images/realestatepics/2.jpg">
+                                            </div>
+
+                                        </div>
+                                    </div><!-- .rl-rental-slider -->
+                                    
+                                    <div class="rl-rental-info">
+                                        <h2>$742 per week</h2>
+                                        <p>1005/80 Clarendon Street, Southbank, 3006</p>
+                                        <p>APARTMENT</p>
+                                        
+                                        <table class="table hori-icons-table">
+                                            <tr class="icon-dev-table table-icon-bed">
+                                                <td class="borderright1"><i class="fa fa-bed" aria-hidden="true"></i></td>
+                                                <td class="borderright3"><span>8</span></td>
+
+                                                <td class="borderright1"><i class="properticons properticons-baths"></i></td>
+                                                <td class="borderright3"><span>5</span></td>
+
+                                                <td class="borderright1"><i class="fa fa-car" aria-hidden="true"></i></td>
+                                                <td><span>19</span></td>
+
+                                            </tr>
+                                        </table>
+                                        
+                                        <button class="submit-btn rl-rental-more-btn">More Details</button>
+                                        
+                                        
+                                    </div><!-- .rl-rental-info -->
+                                    
+                                </div><!-- .rl-rental-tab-listing -->
+                            </section><!-- .rl-tab-body -->
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab rl-contact-agent-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Contact Agent</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            <section class="rl-tab-body rl-agent-friend">
+                                <p>Please complete the form below to request a showing for this property. We will review your request and respond to you as soon as possible. Please add any additional notes or comments that we will need to know about your request.</p>
+                                <div class="rl-contact-form">
+                                    <form>
+                                      <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="number" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Evening Phone</label>
+                                        <input type="number" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                          <p class="rl-contact-label-p">Contact Preference</p>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioContactPre" value="option1"> Phone
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioContactPre" value="option2"> Email
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioContactPre" value="option3"> Either
+                                        </label>
+                                      </div>
+                                      <div class="form-group">
+                                          <p class="rl-contact-label-p">Contact Time</p>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioContact" value="option4"> Phone
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioContact" value="option5"> Email
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioContact" value="option6"> Either
+                                        </label>
+                                      </div>
+                                        
+                                      <div class="form-group rl-contact-textarea">
+                                          <label>Special Requests or Comments</label>
+                                          <textarea maxlength="300" rows="4" class="form-control"></textarea>
+                                          <span class="rl-contact-textarea-note">(Maximum Characters: 300)</span>
+                                          <span class="rl-contact-words-left">You have <strong>300</strong> Characters left</span>
+                                      </div>
+                                        
+                                        
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox"> Send a copy of this request to my email 
+                                        </label>
+                                      </div>
+                                        
+                                        
+                                      <button type="submit" class="submit-btn contact-agent-btn">Submit Request</button>
+                                    </form>
+                                </div><!-- .rl-contact-form -->
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                        
+                        <div class="rl-tab rl-send-friend-tab">
+                        
+                            <section class="rl-tab-head">
+                                <span class="rl-head-text">Send to a friend</span>
+                                <i class="fa fa-caret-right rl-head-icon" aria-hidden="true"></i>
+                            </section>
+                            
+                            
+                            <section class="rl-tab-body rl-agent-friend">
+                                <p>If you would like to send this property to a friend that you think may be interested, please complete the form below. To send this property to multiple friends, enter each email separated by a comma in the "Friend's Email" field.</p>
+                                <div class="rl-contact-form">
+                                    <form>
+                                      <div class="form-group">
+                                        <label>Your Name</label>
+                                        <input type="text" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Your Email</label>
+                                        <input type="email" class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Friend(s) Email</label>
+                                        <input type="email" class="form-control">
+                                        <span class="rl-contact-textarea-note">Enter multiple emails separated by comma.</span>
+                                      </div>
+                                      <div class="form-group rl-contact-textarea">
+                                          <label>Special Requests or Comments</label>
+                                          <textarea maxlength="300" rows="4" class="form-control"></textarea>
+                                          <span class="rl-contact-textarea-note">(Maximum Characters: 300)</span>
+                                          <span class="rl-contact-words-left">You have <strong>300</strong> Characters left</span>
+                                      </div>
+                                        
+                                      <button type="submit" class="submit-btn contact-agent-btn">Send</button>
+                                    </form>
+                                </div><!-- .rl-contact-form -->
+                            </section>
+                        
+                        </div><!-- rl-tab -->
+                    
+                    </section><!-- .rl-tabs-container -->
+                
+                </div><!-- .rl-tabs-box -->
+                
+                
+                
+                
+                
+                
+                
+
+            </div><!-- end of .rl-main -->
+            
+            
+        </div><!-- end of content under_header_wrap -->
+
+        <div class="clear"></div>
+
+        <footer>
+            <div class="footerLinks">
+                <span><a>View Desktop Site</a></span><sep class="footer-sep">|</sep>
+                <span><a href="#">Terms of use</a></span><sep class="footer-sep">|</sep>
+                <span><a href="#">Privacy</a></span>
+            </div>
+          <div class="footer_lower_wrap"><span>Copyright&copy; 2016</span> Property Investors Only Pty Ltd All rights reserved.
+          </div>
+
+        </footer>
+    
+    </div>
+
+
+<!-- Currency Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">You've requested to show all prices in <span class="modelcurrencyval"></span></h4>
+      </div>
+      <div class="modal-body">
+          <p>Property Investors Only Pty Ltd does not guarantee the accuracy of the exchange rates used by the currency converter. You should confirm current rates before making any transactions or decisions that could be affected by changes in the exchange rates. Rates are for information purposes only and are subject to change without notice.</p>
+          <p>All transactions will be conducted in Australian Dollars.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Rental Estimator Modal -->
+<div class="modal fade" id="estimatorModal" tabindex="-1" role="dialog" aria-labelledby="estimatorModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">System Generated Average</h4>
+      </div>
+      <div class="modal-body">
+          <p>The system generated average is calculated by taking the average advertised rent for properties with the same number of bedrooms, bathrooms and car spaces. Properties are only included in calculations if they match the same property type and are located within the same suburb.</p>
+          <h2>$450 per week</h2>
+          <p>(No similar properties currently for rent in Southbank. $450 used for demonstration purposes only.)</p>
+          <h2>Agents Rental Estimator™:</h2>
+          <p>Agents Rental Estimator gives local agents the ability to estimate the expected return on each property based on the information, floor plan and photos that are provided. Should you have any questions please feel free to contact the agent direct.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+<!-- Full Disclaimer Modal -->
+<div class="modal fade" id="fullDisclaimerModal" tabindex="-1" role="dialog" aria-labelledby="fullDisclaimerModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">LMI Premium Estimator Disclaimer</h4>
+      </div>
+      <div class="modal-body">
+          <p>This LMI calculator has been created to provide an indication only of how LMI premium could increase your total purchase costs.</p>
+          <p>All premium quotes are estimates only. They are not an indication that the LMI provider approved the LMI risk. Premium quotes may vary for a number of reasons including but not limited to the LMI provider, LMI product and the purpose of the loan. As a result the actual premium payable will differ from the premium quote shown.</p>
+          <p>To the extent permitted by law, Property Investors Only Pty Ltd, its related bodies corporate, and each of their employees, officers and contractors are not liable for any direct, indirect, special, consequential or other loss or damage (including, without limitation, any lost profits, loss of opportunity, loss of revenue, loss of anticipated savings, business interruption, loss of information or programs or other data on your information handling system), arising in any way (including by way of negligence) from or in connection with the use of this premium estimator or that is directly or indirectly suffered in connection with the use of, or the inability to use, this premium estimator, even if Property Investors Only Pty Ltd has been expressly advised of the possibility of such loss or damage, or from anyone acting or refraining to act in reliance.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<!-- Depreciation Calculator Modal -->
+<div class="modal fade" id="depreciationCalModal" tabindex="-1" role="dialog" aria-labelledby="depreciationCalModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Depreciation Calculator</h4>
+      </div>
+      <div class="modal-body">
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="depreciationAmount">Depreciation amount per annum:</label>
+                <div class="input-group">
+                  <input type=number class="form-control" id="depreciationAmount">
+                  <div class="input-group-addon">per annum</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+    
+<!-- Sign Up Modal -->
+<div class="modal fade" id="rlInputSignupModal" tabindex="-1" role="dialog" aria-labelledby="rlInputSignupModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-warning" aria-hidden="true"></i> Sorry! This feature is only accessible to registered users</h4>
+      </div>
+      <div class="modal-body">
+          <h2>Join Today. Its Free & Setup only takes a minute.</h2>
+          <ul>
+              <li>Ability to use your own personal information including your personal tax rate, interest rate and or predetermined deposit amounts</li>
+              <li>Access to our financial Graphs tab for each property.</li>
+              <li>Use of the depreciation calculator for all properties.</li>
+              <li>Our system will automatically save the last 25 properties viewed, we would hate for you to lose the perfect investment.</li>
+          </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Register Here</button>
+        <button type="button" class="btn btn-primary">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>  
+
+    
+
+<!-- Floor Plan Modal -->
+<div class="modal fade" id="rlFloorPlanModal" tabindex="-1" role="dialog" aria-labelledby="rlFloorPlanModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+          <img class="floor-plan-big-img" src="images/floorplan.jpg" />
+      </div>
+    </div>
+  </div>
+</div>  
+    
+    
+    
+<!-- Rental Detail Modal -->
+<div class="modal fade" id="rlRentalDetailModal" tabindex="-1" role="dialog" aria-labelledby="rlRentalDetailModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+          <p>Furnished apartments include all utilities, Foxtel (30+ channels) & unlimited local and national calls. 100's to choose, Book online.</p>
+          <p>Not within your budget?<br />We have 100's of 1,2,3 bedroom fully furnished apartments from as little as $400 per week. Check www.corporatekeys.com.au for details.</p>
+          <p>MINIMUM STAY ONLY 28 NIGHTS & BOOK ONLINE.</p>
+          <p>Weekly Rental:<br />
+$819.00 per week - 12 months plus<br />
+$840.00 per week - 6 months plus<br />
+$861.00 per week - 3 to 6 month stay<br />
+$882.00 per week - 28 nights to 3 month stay<br />
+$695.00 per week - First 28 nights only</p>
+          <p>The quoted weekly rental rate includes:
+              <ul>
+                  <li>A fully furnished apartment including home-wares and linen;</li>
+                  <li>Utility connections and all ongoing usage charges;</li>
+                  <li>Telephone connection, line rental and UNLIMITED local & national calls;</li>
+                  <li>Cable TV (Foxtel) with over 30 channels;</li>
+                  <li>A Customer Care telephone number to ensure rapid response to service requests that may arise during the stay.</li>
+              </ul>
+          </p>
+          <p>Car parking is available subject to availability at the time of booking. Charges apply.</p>
+          <p>Minimum stay applies.</p>
+          <p>For more information please visit our website for more details.</p>
+          <h2>FEATURES</h2>
+          <ul>
+              <li>Balcony</li>
+              <li>Air Conditioning</li>
+              <li>In Ground Pool</li>
+              <li>Pay TV</li>
+          </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
+    
+    
+    
+    <!-- Share Options Modal -->
+<div class="modal fade" id="shareoptionsModal" tabindex="-1" role="dialog" aria-labelledby="shareoptionsModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Share on</h4>
+      </div>
+      <div class="modal-body">
+          <div class="share-body-box">
+              <span><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
+              <span><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
+              <span><i class="fa fa-google-plus-square" aria-hidden="true"></i></span>
+              <span><i class="fa fa-pinterest-square" aria-hidden="true"></i></span>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+  <script type="text/javascript" src="js/js.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjMrWzuIXKuE5RsY-UHM5DUkLjkygPU8k&callback=initMap">
+</script>
+</html>

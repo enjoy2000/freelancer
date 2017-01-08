@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Loan Detail Page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/masonry.min.js"></script>
+    
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="properticons/css/properticons.css" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/chosen.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" media="all" href="css/style.css" type="text/css">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrap"  style=" width:100%;">
+        <div class="extended-menu">
+            <div class="extended-menu-body">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Residential For Sale</a></li>
+                    <li><a href="#"><i class="fa fa-building-o" aria-hidden="true"></i> Commercial For Sale</a></li>
+                    <li><a href="#"><span class="menu-img-icon"><img src="images/new-30.png"></span> Buy Off the Plan</a></li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i> Find an Agent</a></li>
+                    <li><a href="#"><i class="fa fa-usd" aria-hidden="true"></i> Sold Prices</a></li>
+                    <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> My Account</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log-out</a></li>
+                </ul>
+            </div>
+        </div><!-- end of .extended-menu -->
+        
+        <header>
+            <div class="ar-menu">
+                <div class="col-xs-3 ar-menu-bars"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                <div class="col-xs-6 ar-menu-logo">
+                    <table>
+                      <tr>
+                         <td style="text-align: center; vertical-align: middle;">
+                              <img src="images/logo.png" class="img-responsive center-block ar-logo-image" />
+                         </td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="col-xs-3 ar-menu-right"><button class="back-top-btn ar-btn">Back</button></div>
+            </div>
+            
+        </header>
+        
+        <div class="clear"></div>
+        
+        <div class="content under_header_wrap ar-wraper">
+            
+                
+            <div class="col-md-12 col-sm-12 col-xs-12 under_header_area mcenter">
+                
+                <div class="currency_text_wrap">
+                    <span class="m_title">Choose Currency </span>
+                    <select name="currency" class="styled-select" id="currency">
+                        <option value="AUD" selected="">AUD</option>
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CNY">CNY</option>
+                        <option value="SGD">SGD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="">&nbsp;---</option>
+                        <option value="ARS">ARS</option>
+                        <option value="BMD">BMD</option>
+                        <option value="BRL">BRL</option>
+                        <option value="CAD">CAD</option>
+                        <option value="DKK">DKK</option>
+                        <option value="EGP">EGP</option>
+                        <option value="HKD">HKD</option>
+                        <option value="KYD">KYD</option>
+                        <option value="NZD">NZD</option> 
+                    </select> 
+
+                </div><!-- end of .currency_text_wrap --> 
+
+                <div class="mod-languages">
+                    <!-- Split button -->
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" 
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/en.gif"></button>
+                      <button type="button" class="btn btn-default dropdown-toggle downarrow" 
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#"><img src="images/de.gif"></a></li>
+                          <li role="separator" class="divider"></li>
+                        <li><a href="#"><img src="images/nl.gif"></a></li>
+                          <li role="separator" class="divider"></li>
+                        <li><a href="#"><img src="images/zh_cn.gif"></a></li>
+                          <li role="separator" class="divider"></li>
+                        <li><a href="#"><img src="images/ms_my.gif"></a></li>
+                          <li role="separator" class="divider"></li>
+                        <li><a href="#"><img src="images/ko.gif"></a></li>
+                          <li role="separator" class="divider"></li>
+                        <li><a href="#"><img src="images/en.gif"></a></li>
+                      </ul>
+                    </div>
+                </div><!-- end of .mod-language --> 
+
+            </div><!-- end of .under_header_area -->
+                
+            <div class="clear"></div>
+            <div id="breadcrumb" class="col-xs-12">
+                <ul class="breadcrumb">
+                    <li class="home">
+                        <a href="/"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li>
+                        <a href="/">VIC</a>
+                    </li>
+                    <li>
+                        <a href="/">Loan Comparison</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            
+            
+            <section class="loan-detail-page">
+            <div class="row ar-heading-row">
+            <div class="col-xs-12">
+                <h1>LOAN DETAIL PAGE</h1>
+                <div class="row summary-report"> 
+                  <div class="col-xs-2">
+                    <img alt="" src="images/UBANK.png"/>
+                  </div>
+                  <div class="col-xs-2">
+                    <p>Advertised Rate</p>
+                    <p class="value">4.35</p>
+                    <p>Variable</p>
+                  </div>
+                  <div class="col-xs-2">
+                    <p>Comparison</p>
+                    <p class="value">5.56%</p>
+                  </div>
+                  <div class="col-xs-3">
+                    <p>Weekly Repayment</p>
+                    <p class="value">$1150</p>
+                  </div>
+                  <div class="col-xs-2">
+                    <p>Minimum Deposit</p>
+                    <p class="value">25%</p>
+                  </div>
+                </div>
+              <div class="row">
+              <div class="col-xs-6">
+                <a class="btn ar-gotosite" title="" href="#">Go to site</a>
+              </div>
+              <div class="col-xs-6">
+                <a class="btn ar-compare" title="" href="#">Compare against other Loans</a>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-12">
+                <section class="ar-ads-box"></section>
+            </div>
+        </div>
+        <div class="row compare-detail">
+          <div class="col-md-12">
+            <h2>Loan Details</h2>
+            <table class="table">
+              <tr class="ar-strip-light">
+                <td>Maximum LVR</td>
+                <td>80%</td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Loan Terms</td>
+                <td>1 - 30 Years</td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>Borrowing Amount Range</td>
+                <td>$100k - $2m</td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Refinance</td>
+                <td></td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>Line of Credit</td>
+                <td></td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td> Self-managed Super</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-12">
+            <h2>Finer Details</h2>
+            <table class="table">
+              <tr class="ar-strip-light">
+                <td>Interest rate structure variable</td>
+                <td>80%</td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Interest Only</td>
+                <td></td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>Loan allows split interest rate</td>
+                <td></td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Principal and interest</td>
+                <td></td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>States Applicable</td>
+                <td>NSW VIC SA WA QLD NT TAS</td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Redraw Facility</td>
+                <td></td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>Redraw Fee</td>
+                <td>$0</td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Extra Repayments</td>
+                <td>Unlimited extra repayments</td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>Weekly Repayments</td>
+                <td>$1150</td>
+              </tr>
+              <tr class="ar-strip-dark">
+                <td>Fortnightly Repayments</td>
+                <td>$350</td>
+              </tr>
+              <tr class="ar-strip-light">
+                <td>Monthly Repayments</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-xs-3">
+
+          </div>
+        </div>
+        <div class="row brand-compare">
+          <h1>Similar Investmenet Home Loans</h1>
+          <div class="row">
+          <div class="col-md-12 column">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img" alt="" src="images/reebok.jpg"/>
+              </div>
+              <div class="col-xs-8 brand-name">
+                Home value Home loan (Owner-Occupier Special)
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                Advertised Rate
+                <span class="value">5.5%</span>
+              </div>
+              <div class="col-xs-3">
+                Comparison Rate
+                <span class="value">4.55%</span>
+              </div>
+              <div class="col-xs-3">
+                Weekly Repayment
+                <span class="value">$1050</span>          
+              </div>
+              <div class="col-xs-3">
+                Minimum Deposit %
+                <span class="value">25%</span>            
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 column">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img" alt="" src="images/reebok.jpg"/>
+              </div>
+              <div class="col-xs-8 brand-name">
+                Home value Home loan (Owner-Occupier Special)
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                Advertised Rate
+                <span class="value">5.5%</span>
+              </div>
+              <div class="col-xs-3">
+                Comparison Rate
+                <span class="value">4.55%</span>
+              </div>
+              <div class="col-xs-3">
+                Weekly Repayment
+                <span class="value">$1050</span>          
+              </div>
+              <div class="col-xs-3">
+                Minimum Deposit %
+                <span class="value">25%</span>            
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 column">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img" alt="" src="images/reebok.jpg"/>
+              </div>
+              <div class="col-xs-8 brand-name">
+                Home value Home loan (Owner-Occupier Special)
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                Advertised Rate
+                <span class="value">5.5%</span>
+              </div>
+              <div class="col-xs-3">
+                Comparison Rate
+                <span class="value">4.55%</span>
+              </div>
+              <div class="col-xs-3">
+                Weekly Repayment
+                <span class="value">$1050</span>          
+              </div>
+              <div class="col-xs-3">
+                Minimum Deposit %
+                <span class="value">25%</span>            
+              </div>
+            </div>
+          </div>                    
+          </div>
+                    <div class="row">
+          <div class="col-md-12 column">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img" alt="" src="images/reebok.jpg"/>
+              </div>
+              <div class="col-xs-8 brand-name">
+                Home value Home loan (Owner-Occupier Special)
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                Advertised Rate
+                <span class="value">5.5%</span>
+              </div>
+              <div class="col-xs-3">
+                Comparison Rate
+                <span class="value">4.55%</span>
+              </div>
+              <div class="col-xs-3">
+                Weekly Repayment
+                <span class="value">$1050</span>          
+              </div>
+              <div class="col-xs-3">
+                Minimum Deposit %
+                <span class="value">25%</span>            
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 column">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img" alt="" src="images/reebok.jpg"/>
+              </div>
+              <div class="col-xs-8 brand-name">
+                Home value Home loan (Owner-Occupier Special)
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                Advertised Rate
+                <span class="value">5.5%</span>
+              </div>
+              <div class="col-xs-3">
+                Comparison Rate
+                <span class="value">4.55%</span>
+              </div>
+              <div class="col-xs-3">
+                Weekly Repayment
+                <span class="value">$1050</span>          
+              </div>
+              <div class="col-xs-3">
+                Minimum Deposit %
+                <span class="value">25%</span>            
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 column">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img" alt="" src="images/reebok.jpg"/>
+              </div>
+              <div class="col-xs-8 brand-name">
+                Home value Home loan (Owner-Occupier Special)
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                Advertised Rate
+                <span class="value">5.5%</span>
+              </div>
+              <div class="col-xs-3">
+                Comparison Rate
+                <span class="value">4.55%</span>
+              </div>
+              <div class="col-xs-3">
+                Weekly Repayment
+                <span class="value">$1050</span>          
+              </div>
+              <div class="col-xs-3">
+                Minimum Deposit %
+                <span class="value">25%</span>            
+              </div>
+            </div>
+          </div>                    
+          </div>
+        </div>
+                
+            </section>
+            
+            
+        </div><!-- end of content under_header_wrap -->
+        
+        <div class="clear"></div>
+
+        <footer>
+            <div class="footerLinks">
+                <span><a>View Desktop Site</a></span><sep class="footer-sep">|</sep>
+                <span><a href="#">Terms of use</a></span><sep class="footer-sep">|</sep>
+                <span><a href="#">Privacy</a></span>
+            </div>
+          <div class="footer_lower_wrap"><span>Copyright&copy; 2016</span> Property Investors Only Pty Ltd All rights reserved.
+          </div>
+
+        </footer>
+        
+        
+        <div class="ar-compare-section-box">
+            <div class="compare-section-inner">
+                <section class="ar-compare-text" 
+                         artext1="Great, you can select up to 4 investment loans to compare"
+                         artext2="/ 4 investment loans ready to be compared">
+                </section>
+                <section class="ar-compare-logos">
+                    
+                    <!-- Inserted using js
+                    <div class="ar-logo-compare">
+                        <img src="images/reebok.jpg">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                    -->
+                
+                </section>
+                
+                <section>
+                    <button class="ar-compare-fixed">Compare Now</button><button class="ar-clear-fixed">Clear Loans</button>
+                </section>
+                <section class="ar-compare-btns"></section>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="currencyChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">You've requested to show all prices in <span class="modelcurrencyval"></span></h4>
+      </div>
+      <div class="modal-body">
+          <p>Property Investors Only Pty Ltd does not guarantee the accuracy of the exchange rates used by the currency converter. You should confirm current rates before making any transactions or decisions that could be affected by changes in the exchange rates. Rates are for information purposes only and are subject to change without notice.</p>
+          <p>All transactions will be conducted in Australian Dollars.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+<!-- Comparison Rate Modal -->
+<div class="modal fade" id="comparisonRateModal" tabindex="-1" role="dialog" aria-labelledby="comparisonRateModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Comparison Rate explained</h4>
+      </div>
+      <div class="modal-body">
+          <p>* The Comparison Rate combines the lender's interest rate, fees and charges into a single rate to show the true cost of a home loan. The comparison rate displayed is for a secured loan with monthly principal and interest repayments for $150,000 over 25 years, and applies only to this example. Different amounts and terms will result in different comparison rates. Full comparison rate schedules are available from lenders. Costs such as redraw fees or early repayment fees, and savings such as fee waivers, are not included in the comparison rate but may inﬂuence the cost of the loan.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+</body>
+
+  <script type="text/javascript" src="js/js.js"></script>
+
+</html>
