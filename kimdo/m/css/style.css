@@ -8017,6 +8017,7 @@ a.ar-gotosite {
     cursor: pointer;
     padding: 5px;
     width: 65px;
+    font-size:11px;
 }
 a.ar-gotosite:hover {
     background-color: #ab5200;
@@ -8759,6 +8760,7 @@ p.description {
 
 table.table.partner-table td {
     border: none;
+    font-size: 12px;
 }
 
 table.partner-table td.ar-strip-light
@@ -8803,12 +8805,46 @@ table.partner-table a.ar-gotosite {
     margin: auto;
     width: 75px;
 }
+#breadcrumb, #breadcrumb li, ul.breadcrumb {
+    background-color: #f47526;
+}
 #breadcrumb li a {
-    color: #2f3c40;
+    color: white;
+    padding: 3px 10px;
+    font-weight: normal;
+}
+#breadcrumb li + li:before {
+    color: #f47526;
+}
+#breadcrumb li.home a {
+    padding-left: 0;
+    margin-left: -10px;
+}
+#breadcrumb li + li + li:before {
+    color: white;
+    content: "\003e";
+}
+
+#breadcrumb li.back {
+    border-right: solid 1px white;
+}
+#breadcrumb li.back a:before {
+    color: white;
+    content: "\003c";
 }
 section.loan-detail-page {
     font-size: 14px;
-    padding: 20px 0;
+    padding: 20px;
+}
+section.loan-detail-page .ar-heading-row {
+    font-size: 11px;
+}
+section.loan-detail-page  p {
+    font-size: 14px;
+    text-align: center;
+}
+section.loan-detail-page  p.value {
+    font-size: 16px;
 }
 section.loan-detail-page  img {
     max-width: 100%;
@@ -8816,13 +8852,39 @@ section.loan-detail-page  img {
 section.loan-detail-page a.ar-gotosite {
     width: auto;
 }
-section.loan-detail-page .brand-compare div {
-    text-align: center;
-    font-size: 12px;
-}
-section.loan-detail-page .brand-name {
+section.loan-detail-page .brand-compare .col-xs-3 {
     text-align: center;
     font-size: 15px;
+}
+
+p.office-partner 
+{
+    text-align: center;
+    color: #ffffff;
+    background-color: #3cb878;
+    padding: 3px 0;
+    margin-bottom: 0;
+}
+
+section.loan-detail-page .brand-compare .column {
+    margin-top: 20px;
+}
+
+.brand-compare .col-xs-4 {
+    text-align: left;
+}
+.brand-compare h1 {
+    margin-top: 20px;
+}
+.brand-compare img {
+    width: 100%;
+}
+.brand-compare .brand-name {
+    text-align: left;
+}
+section.loan-detail-page .brand-name {
+    text-align: left;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -8847,7 +8909,7 @@ span.money {
 }
 
 p.value, span.value {
-  font-size: 24px;
+  font-size: 16px;
   color: #f47526;
   font-weight: bold;
   text-align: center;
@@ -8931,6 +8993,9 @@ a.ar-compare:hover
     {
         width: calc(100% - 101px);
         font-size: 16px;
+    }
+    section.loan-detail-page  p {
+        font-size: 12px;
     }
 }
 @media (max-width: 400px) and (min-width: 300px) 

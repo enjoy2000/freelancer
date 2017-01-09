@@ -517,11 +517,37 @@ a.ar-gotosite:hover
 ///////////////////loan comparison
 */
 
+div.inline-block {
+    display: inline-block;
+    margin-right: 15px;
+}
+div.property.row {
+    background-color: #f47526;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 15px 30px;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 20px;
+}
+div.property.row input {    
+    background-color: white;
+    border-radius: 7px;
+    padding: 5px 10px;
+    color: #a3a3a3;
+    outline: none;
+    border: none;
+    margin-right: 15px;
+    width: 128px;
+}
+
 p.office-partner 
 {
     text-align: center;
     color: #ffffff;
     background-color: #3cb878;
+    padding: 3px 0;
+    margin-bottom: 0;
 }
 
 p.description {
@@ -531,6 +557,9 @@ p.description {
 
 table.table.partner-table td {
     border: none;
+}
+table.table.partner-table tr:first-child td img {
+    margin-bottom: 10px;
 }
 
 table.partner-table td.ar-strip-light
@@ -646,17 +675,29 @@ a.ar-compare:hover
     text-align: center
 }
 
-.brand-name {
+.brand-compare img {
+    width: 100%;
+}
+.brand-compare > .row {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.brand-compare > .row + .row {
+    border-top: 4px solid #efefef;
+}
+.brand-compare > .row > .column + .column {
+    border-left: 4px solid #efefef;
+}
+.brand-compare .brand-name {
     font-weight: bold;
     font-size: 20px;
-    text-align: left
+    text-align: left;
+    padding-left: 0;
 }
 
 .brand-compare .column {
     padding-top: 20px;
     padding-bottom: 20px;
-    border-right: 4px solid #efefef;
-    margin-bottom: 40px;
 }
 
 
