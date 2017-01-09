@@ -1,0 +1,15 @@
+{
+    "name": "enjoy2000/freelancer",
+    "type": "project",
+    "require": {
+        "ext-mcrypt": "^0.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hat Dao",
+            "email": "enjoy3013@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
