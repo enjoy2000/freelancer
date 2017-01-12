@@ -8761,7 +8761,7 @@ p.description {
 table.table.partner-table td {
     border: none;
     font-size: 12px;
-    white-space: normal;
+    white-space: normal!important;
 }
 
 table.partner-table td.ar-strip-light
