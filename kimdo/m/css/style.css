@@ -8761,6 +8761,7 @@ p.description {
 table.table.partner-table td {
     border: none;
     font-size: 12px;
+    white-space: normal;
 }
 
 table.partner-table td.ar-strip-light
@@ -8805,32 +8806,33 @@ table.partner-table a.ar-gotosite {
     margin: auto;
     width: 75px;
 }
+#breadcrumb ul {
+    padding-top: 0;
+}
 #breadcrumb, #breadcrumb li, ul.breadcrumb {
     background-color: #f47526;
 }
-#breadcrumb li a {
+#breadcrumb > a {
+    margin-left: 5px;
+}
+#breadcrumb a {
     color: white;
-    padding: 3px 10px;
+    padding: 3px 0px;
     font-weight: normal;
+    font-size: 10px;
 }
 #breadcrumb li + li:before {
     color: #f47526;
+    margin: 0 -5px;
 }
 #breadcrumb li.home a {
     padding-left: 0;
     margin-left: -10px;
 }
-#breadcrumb li + li + li:before {
+#breadcrumb li + li:before {
     color: white;
     content: "\003e";
-}
-
-#breadcrumb li.back {
-    border-right: solid 1px white;
-}
-#breadcrumb li.back a:before {
-    color: white;
-    content: "\003c";
+    font-size: 10px;
 }
 section.loan-detail-page {
     font-size: 14px;
@@ -8854,7 +8856,7 @@ section.loan-detail-page a.ar-gotosite {
 }
 section.loan-detail-page .brand-compare .col-xs-3 {
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 p.office-partner 
@@ -8882,9 +8884,12 @@ section.loan-detail-page .brand-compare .column {
 .brand-compare .brand-name {
     text-align: left;
 }
+section.loan-detail-page h1 {
+    font-size: 20px;
+}
 section.loan-detail-page .brand-name {
-    text-align: left;
-    font-size: 18px;
+    text-align: right;
+    font-size: 16px;
     font-weight: bold;
 }
 
